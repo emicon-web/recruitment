@@ -1,0 +1,80 @@
+<div class="fullpage">
+    <button type="submit" class="btn btn-success mt-5 mb-5 mr-5" style="float: right;" (click)= "toggle()" *ngIf="tableShow == true">Add Employee</button>
+    <button type="submit" class="btn btn-success mt-5 mb-5 mr-5" style="float: right;" (click)= "toggle()" *ngIf="formShow == true">Employee List</button>
+<div class="signup-form" *ngIf="formShow == true">
+    <form [formGroup]="signupForm" (ngSubmit)="submitForm()">
+        <div class="im">
+            <img src="../../assets/img/logo-blue.png" alt="" class="logo-img" routerLink="/candidates" style="cursor: pointer;">
+        </div>
+            <h2>Register</h2>
+		<p class="hint-text">Create Account For Employee</p>
+        <div class="form-group">
+            <div class="col-xs-6"><input type="text" class="form-control" formControlName="name"
+                [ngClass]="{ 'is-invalid': formSubmitted && f.name.errors }" placeholder="Name">
+            </div>
+            <div *ngIf="formSubmitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" formControlName="email"
+            [ngClass]="{ 'is-invalid': formSubmitted && f.email.errors }" placeholder="Email">
+            <div *ngIf="formSubmitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.pattern">Enter Valid Email</div>
+            </div>
+        </div>
+		<div class="form-group">
+            <input [type]="showPassword ? 'text' : 'password'" class="form-control password-type" formControlName="password" [ngClass]="{ 'is-invalid': formSubmitted && f.password.errors }" placeholder="Password">
+            <button type="button" class="password-type bg-transparent" (click)="togglePassword()" style="float: right;">
+                <i [class]="showPassword ? 'fa fa-eye' : 'fa fa-eye-slash'" aria-hidden="true"></i>
+            </button>
+          <div *ngIf="formSubmitted && f.password.errors" class="invalid-feedback">
+           <div *ngIf="f.password.errors.required">Password is required</div>
+           <div *ngIf="f.password.errors.pattern">Enter Strong Password</div>
+        </div>
+        </div>
+        <div class="form-group">
+            <input [type]="showConfirmPassword ? 'text' : 'password'" class="form-control password-type" formControlName="confirmPassword" 
+                [ngClass]="{ 'is-invalid': formSubmitted && f.confirmPassword.errors }" placeholder="Confirm Password">
+            <button type="button" class="password-type bg-transparent" (click)="toggleConfirmPassword()" style="float: right;">
+                <i [class]="showConfirmPassword ? 'fa fa-eye' : 'fa fa-eye-slash'" aria-hidden="true"></i>
+            </button>
+          <div *ngIf="formSubmitted && f.confirmPassword.errors" class="invalid-feedback">
+           <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+           <div *ngIf="f.confirmPassword.errors.mustMatch">Password and Confirm Password must match with each other.</div>
+        </div>
+        </div>        
+        <div class="form-group">
+			<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+		</div>
+		<div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+        </div>
+    </form>
+	<!-- <div class="text-center">Already have an account? <a href="#">Sign in</a></div> -->
+</div>
+
+
+<div class="container" *ngIf="tableShow == true">
+<input class="float-right" type="text" [(ngModel)]="term" placeholder="Search" class="mt-5">
+<table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <ngx-spinner></ngx-spinner> -->
+      <tr *ngFor="let user of allUsers | filter:term | paginate : { itemsPerPage:5, currentPage:p}">
+        <th>{{user.name}}</th>
+        <td>{{user.email}}</td>
+        <td>{{user.status}}</td>
+      </tr>
+    </tbody>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </table>
+</div>
+</div>

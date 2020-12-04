@@ -1,0 +1,32 @@
+<div class="fullpage">
+    <div class="signup-form">
+        <form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="mt-3">
+            <div class="im">
+                <img src="../../assets/img/logo-blue.png" alt="" class="logo-img" routerLink="/candidates" style="cursor: pointer;">
+            </div>
+                <h2>Login</h2>
+            <p class="hint-text">Recruitment Manager</p>
+            <div class="form-group">
+                <input type="email" class="form-control" formControlName="email"
+                [ngClass]="{ 'is-invalid': formSubmitted && f.email.errors }" placeholder="Email">
+                <div *ngIf="formSubmitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.pattern">Enter Valid Email</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input [type]="showPassword ? 'text' : 'password'" class="form-control password-type" formControlName="password" [ngClass]="{ 'is-invalid': formSubmitted && f.password.errors }" placeholder="Password">
+                <!-- <button type="button" class="password-type bg-transparent" (click)="togglePassword()" style="float: right;">
+                    <i [class]="showPassword ? 'fa fa-eye' : 'fa fa-eye-slash'" aria-hidden="true"></i>
+                </button> -->
+                <div *ngIf="formSubmitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg btn-block">Login</button>
+            </div>
+            <div class="text-center">Create Employee account? <a routerLink="/sign-up">Click Here!</a></div>
+        </form>
+    </div>
+</div>

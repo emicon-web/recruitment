@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <div class="row bg-secondary" style="padding-top : 10px; padding-bottom : 10px; ">
+    <div class="col-md-7">
+      <img src="../../assets/img/logo-white.png" alt="" class="logo-img" routerLink="/candidates" style="cursor: pointer;">
+    </div>
+    <div class="col-md-5">
+      <button class="btn btn-danger float-right" (click)="logout()">Sign Out</button>
+      <button routerLink="/add-candidate" class="btn btn-success float-right mr-3">Add Candidate</button>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+    <!-- No data message -->
+    <!-- <p *ngIf="candidates.length <= 0" class="no-data text-center">There is no Candidates added yet!</p> -->
+    <div #candidatesList>
+      <div style="padding-bottom: 10px;padding-top: 10px;">
+       <div class="row">
+        <div class="col-sm-6">
+         <button (click)="exportToExcel()" class="btn btn-success">Export To Excel</button> 
+        </div>
+        <div class="col-sm-6">
+          <input class="float-right" type="text" [(ngModel)]="term" placeholder="Search">
+        </div>
+       </div>
+      </div>
+    <!-- Employee list -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Consultant Name</th>
+          <th>Email</th>
+          <th>Location</th>
+          <th>Preffered Location</th>
+          <th>Phone No.</th>
+          <th>PAN No.</th>
+          <th>Adhar No.</th>
+          <th>Skill Set</th>
+          <th>Year Of Expirence</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <ngx-spinner></ngx-spinner> -->
+        <tr *ngFor="let candidate of candidates | filter:term | paginate : { itemsPerPage:5, currentPage:p}">
+          <td>{{candidate.consultantName}}</td>
+          <td>{{candidate.email}}</td>
+          <td>{{candidate.location}}</td>
+          <td>{{candidate.preferredLocation}}</td>
+          <td>{{candidate.phoneNumber}}</td>
+          <td>{{candidate.panNumber}}</td>
+          <td>{{candidate.adharNumber}}</td>
+          <td>{{candidate.skillSet}}</td>
+          <td>{{candidate.yearOfExperience}}</td>
+          <td class="text-center edit-block">
+            <span class="edit" [routerLink]="['/edit-candidate/', candidate._id]">
+              <button type="button" class="btn btn-success btn-sm">Edit</button>
+            </span>
+            <!-- <span class="delete" (click)="removeEmployee(employee, i)">
+              <button type="button" class="btn btn-danger btn-sm">Delete</button>
+            </span> -->
+          </td>
+        </tr>
+      </tbody>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </table>
+    </div>
+  </div>

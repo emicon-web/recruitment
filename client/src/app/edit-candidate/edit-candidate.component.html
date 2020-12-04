@@ -1,0 +1,172 @@
+<div class="container-fluid">
+  <div class="row bg-secondary p-2">
+    <div class="col-md-7">
+      <img src="../../assets/img/logo-white.png" alt="" class="logo-img" routerLink="/candidates" style="cursor: pointer;">
+    </div>
+    <div class="col-md-5">
+      <button class="btn btn-danger float-right" (click)="logout()">Sign Out</button>
+      <button routerLink="/add-candidate" class="btn btn-success float-right mr-3">Add Candidate</button>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center mt-2">
+    <div class="col-md-8 register-employee">
+      <!-- form card register -->
+      <div class="card card-outline-secondary">
+        <div class="card-header">
+          <h3 class="mb-0">Edit Candidate</h3>
+          <button routerLink="/candidates" class="mb-0 btn btn-success float-right">Back</button>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="inputName">Consultant Name</label>
+                <input class="form-control" type="text" formControlName="consultantName">
+                <!-- error -->
+                <div class="text-danger" *ngIf="submitted && myForm.consultantName.errors?.required">
+                    Consultant Name is required.
+                </div>
+                <!-- <div class="text-danger" *ngIf="submitted && myForm.consultantName.errors?.minLength || myForm.consultantName.errors?.maxLength">
+                    Consultant Name length should be 3 to 25.
+                </div> -->
+              </div>
+              
+              <div class="form-group col-md-6">
+                <label for="yearOfExperienceNumber3">Year Of Experience</label>
+                <input class="form-control" type="text" formControlName="yearOfExperience">
+                  <!-- <div class="input-group">
+                    <input class="form-control input-sm" type="text" formcontrolname="month">&nbsp;Year&nbsp;
+                    <input class="form-control input-sm" type="text" formcontrolname="year">&nbsp;Month&nbsp;
+                  </div> -->
+                <!-- error -->
+                <p>* Enter Year in Format 8.5 (8Years5Months)</p>
+            <div class="text-danger" *ngIf="submitted && myForm.yearOfExperience.errors?.required">
+              Enter Year Of Experience.
+            </div>
+            <div class="text-danger" *ngIf="showErrorMessage == true">
+              Month should be less then 12
+            </div>
+              </div>
+    
+              
+            </div>
+      
+              <!-- <div class="form-group col-md-6">
+                <label for="inputPassword3">Designation</label>
+                <select class="custom-select form-control" (change)="updateProfile($event.target.value)"
+                  formControlName="designation">
+                  <option value="">Choose...</option>
+                  <option *ngFor="let employeeProfile of EmployeeProfile" value="{{employeeProfile}}">{{employeeProfile}}
+                  </option>
+                </select>
+                <div class="text-danger" *ngIf="submitted && myForm.designation.errors?.required">
+                  Choose designation.
+                </div>
+              </div>  -->
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="inputVerify3">Mobile No</label>
+                <input class="form-control" type="text" formControlName="phoneNumber">
+                <!-- error -->
+                <div class="text-danger" *ngIf="submitted && myForm.phoneNumber.errors?.required">
+                  Enter your phone number.
+                </div>
+                <div class="text-danger" *ngIf="submitted && myForm.phoneNumber.errors?.pattern">
+                  Enter Numbers Only
+                </div>
+                <!-- <div class="text-danger" *ngIf="submitted && myForm.phoneNumber.errors?.minLength || myForm.phoneNumber.errors?.maxLength">
+                    Phone Number length should be 10.
+                </div> -->
+              </div>
+    
+              <div class="form-group col-md-6">
+                <label for="inputEmail3">Email</label>
+                <input class="form-control" type="text" formControlName="email">
+                <!-- error -->
+                <div class="text-danger" *ngIf="submitted && myForm.email.errors?.required">
+                  Enter your email.
+                </div>
+                <div class="text-danger" *ngIf="submitted && myForm.email.errors?.pattern">
+                  Enter valid email.
+                </div>
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="locationVerify3">Location</label>
+                <input class="form-control" type="text" formControlName="location">
+                <!-- error -->
+                <div class="text-danger" *ngIf="submitted && myForm.location.errors?.required">
+                  Enter your Location.
+                </div>
+                <!-- <div class="text-danger" *ngIf="submitted && myForm.location.errors?.minLength || myForm.location.errors?.maxLength">
+                    Location length should be 3 to 25.
+                </div> -->
+              </div>
+              <div class="form-group col-md-6">
+                <label for="preferredLocationVerify3">Preferred Location</label>
+                <input class="form-control" type="text" formControlName="preferredLocation">
+                <div class="text-danger" *ngIf="submitted && myForm.preferredLocation.errors?.required">
+                  Enter your Preferred Location.
+                </div>
+              </div>
+    
+              
+            </div>
+    
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="adharNumber3">Adhar Number</label>
+                <input class="form-control" type="text" formControlName="adharNumber">
+                <!-- error -->
+                <div class="text-danger" *ngIf="submitted && myForm.adharNumber.errors?.required">
+                  Enter your Adhar Number.
+                </div>
+                <div class="text-danger" *ngIf="submitted && myForm.adharNumber.errors?.pattern">
+                  Enter Numbers Only
+                </div>
+                <!-- <div class="text-danger" *ngIf="submitted && myForm.adharNumber.errors?.minLength || myForm.adharNumber.errors?.maxLength">
+                    Adhar Number length should be 12.
+                </div> -->
+              </div>
+              <div class="form-group col-md-6">
+                <label for="panNumber3">PAN Number</label>
+                <input class="form-control" type="text" formControlName="panNumber">
+                <!-- error -->
+                <div class="text-danger" *ngIf="submitted && myForm.panNumber.errors?.required">
+                  Enter your PAN Number.
+                </div>
+                <div class="text-danger" *ngIf="submitted && myForm.panNumber.errors?.pattern">
+                  Enter Numbers Only
+                </div>
+                <!-- <div class="text-danger" *ngIf="submitted && myForm.panNumber.errors?.minLength || myForm.panNumber.errors?.maxLength">
+                    PAN Number length should be 10.
+                </div> -->
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <label for="skillNumber3">Skill Set</label>
+                <input class="form-control" type="text" formControlName="skillSet">
+                <!-- error -->
+                <div class="text-danger" *ngIf="submitted && myForm.skillSet.errors?.required">
+                  Enter Skills.
+                </div>
+              </div>
+            </div>
+            <div class="row">
+            <div class="col-md-6 form-group">
+              <button class="btn btn-success btn-lg btn-block" type="submit">Update</button>
+            </div>
+            <div class="col-md-6 form-group">
+              <button class="btn btn-danger btn-lg btn-block" type="reset">Cancel</button>
+            </div>
+          </div>
+          </form>
+        </div><!-- form  -->
+    </div>
+  </div>
+</div>
