@@ -29,7 +29,7 @@ const usersSchema = new mongooose.Schema({
     timestamps: true
 })
 
-// hashing the password 
+
 saltSecret:String;
 usersSchema.pre('save', function(next){
     bcrypt.genSalt(10, (err,salt) => {
@@ -42,3 +42,22 @@ usersSchema.pre('save', function(next){
 })
 
 const Users = mongooose.model('Users',usersSchema);
+
+// module.exports = (sequelize, Sequelize) => {
+//     const Users = sequelize.define("users", {
+//     name: {
+//         type: Sequelize.STRING
+//     },
+//     email: {
+//         type: Sequelize.STRING
+//     },
+//     password: {
+//         type: Sequelize.BOOLEAN
+//     },
+//     status: {
+//         type: Sequelize.STRING
+//     }
+//     });
+
+//     return Users;
+// };

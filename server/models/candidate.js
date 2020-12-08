@@ -64,3 +64,43 @@ const candidateSchema = new mongooose.Schema({
 })
 
 const Candidate = mongooose.model('Candidate',candidateSchema);
+
+// module.exports = (sequelize, Sequelize) => {
+//     const Candidate = sequelize.define("candidate", {
+//     consultantImage: {
+//         type: Sequelize.STRING
+//     },
+//     consultantName: {
+//         type: Sequelize.STRING
+//     },
+//     email: {
+//         type: Sequelize.BOOLEAN
+//     },
+//     location: {
+//         type: Sequelize.STRING
+//     },
+//     preferredLocation: {
+//         type: Sequelize.BOOLEAN
+//     },
+//     phoneNumber: {
+//         type: Sequelize.STRING
+//     },
+//     panNumber: {
+//         type: Sequelize.BOOLEAN
+//     },
+//     adharNumber: {
+//         type: Sequelize.STRING
+//     },
+//     skillSet: {
+//         type: Sequelize.BOOLEAN
+//     },
+//     yearOfExperience: {
+//         type: Sequelize.BOOLEAN
+//     },
+//     resume: {
+//         type: Sequelize.STRING
+//     }
+//     });
+
+//     return Candidate;
+// };

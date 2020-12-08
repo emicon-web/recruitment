@@ -1,12 +1,22 @@
 {
     "development": {
         "PORT" : 3000,
+        "HOST": "localhost",
+        "USER": "root",
+        "PASSWORD": "123456",
+        "DB": "testdb",
+        "dialect": "mysql",
         "MONGODB_URI": "mongodb+srv://emicon:Mongodb@123@cluster0.krlnm.mongodb.net/recruitment-manager?retryWrites=true&w=majority",
         "JWT_PRIVATE_KEY":"emicon_jwtprivatekey",
         "REFRESH_TOKEN":"emicon_refreshtoken" 
     },
     "production": {
         "PORT" : 80,
+        "HOST": "localhost",
+        "USER": "root",
+        "PASSWORD": "123456",
+        "DB": "testdb",
+        "dialect": "mysql",
         "MONGODB_URI": "mongodb+srv://emicon:Mongodb@123@cluster0.krlnm.mongodb.net/recruitment-manager?retryWrites=true&w=majority",
         "JWT_PRIVATE_KEY":"emicon_jwtprivatekey",
         "REFRESH_TOKEN":"emicon_refreshtoken"        
