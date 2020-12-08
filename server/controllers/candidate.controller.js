@@ -75,9 +75,9 @@ var storage = multer.diskStorage({
         let extension = file.originalname.split('.')[file.originalname.split('.').length - 1];
         if(extension == "JPG" || extension == "JPEG" || extension == "jpg" || extension == "jpeg" ||
         extension == "PNG" || extension == "png"){
-            cb(null, '../uploads/images');
+            cb(null, '/uploads/images');
         }else{
-            cb(null, '../uploads/resumes');
+            cb(null, '/uploads/resumes');
         }
         
     },
