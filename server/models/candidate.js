@@ -36,7 +36,6 @@ const candidateSchema = new mongooose.Schema({
     },
     panNumber : {
         type : Number,
-        required : true,
         minlength : 10,
         maxlength : 10
     },
@@ -57,7 +56,8 @@ const candidateSchema = new mongooose.Schema({
     resume : {
         type : String,
         // required : true
-    }
+    },
+    candidateHistory : []
 },
 {
     timestamps: true

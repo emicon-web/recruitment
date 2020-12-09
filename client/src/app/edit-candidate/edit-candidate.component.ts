@@ -30,12 +30,13 @@ export class EditCandidateComponent implements OnInit {
     let id = this.actRoute.snapshot.paramMap.get('id');
     this.getCandidate(id);
     this.editForm = this.fb.group({
+      _id :[''],
       consultantName : ['',[Validators.required]],
       email : ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       location : ['',[Validators.required]],
       preferredLocation : ['',[Validators.required]],
       phoneNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
-      panNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
+      panNumber : [''],
       adharNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
       skillSet : ['',[Validators.required]],
       yearOfExperience : ['',[Validators.required]]
@@ -49,7 +50,10 @@ export class EditCandidateComponent implements OnInit {
 
   getCandidate(id){
     this.candidateService.getSpecificCandidate(id).subscribe((data:any) => {
+      console.log(data);
+      if(data.candidate != undefined){
       this.editForm.setValue({
+        _id : data.candidate._id,
         consultantName: data.candidate.consultantName,
         email: data.candidate.email,
         location: data.candidate.location,
@@ -59,18 +63,33 @@ export class EditCandidateComponent implements OnInit {
         adharNumber: data.candidate.adharNumber,
         skillSet: data.candidate.skillSet,
         yearOfExperience: data.candidate.yearOfExperience
-      });
+      });}
+      else{
+        this.editForm.setValue({
+          _id : data.can._id,
+          consultantName: data.can.consultantName,
+          email: data.can.email,
+          location: data.can.location,
+          preferredLocation : data.can.preferredLocation,
+          phoneNumber: data.can.phoneNumber,
+          panNumber: data.can.panNumber,
+          adharNumber: data.can.adharNumber,
+          skillSet: data.can.skillSet,
+          yearOfExperience: data.can.yearOfExperience
+        });
+      }
     });
   }
 
   updateCandidate(){
     this.editForm = this.fb.group({
+      _id : [''],
       consultantName : ['',[Validators.required]],
       email : ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       location : ['',[Validators.required]],
       preferredLocation : ['',[Validators.required]],
       phoneNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
-      panNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
+      panNumber : [''],
       adharNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
       skillSet : ['',[Validators.required]],
       yearOfExperience : ['',[Validators.required]]

@@ -33,18 +33,18 @@ export class AddCandidateComponent implements OnInit {
     const data = this.userService.currentUser();
     this.currentUserEmail = data.email;
     this.candidateForm = this.fb.group({
-      consultantImage : ['',[Validators.required]],
+      consultantImage : [''],
       consultantName : ['',[Validators.required]],
       email : ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       location : ['',[Validators.required]],
       preferredLocation : ['',[Validators.required]],
       phoneNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
-      panNumber : ['',[Validators.required]],
+      panNumber : [''],
       adharNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
       skillSet : ['',[Validators.required]],
       yearOfExperience : ['',[Validators.required]],
       createdBy : [this.currentUserEmail,[Validators.required]],
-      resume: ['', [Validators.required]]
+      resume: ['']
     })
   }
 
@@ -92,18 +92,19 @@ onFileSelectt(event) {
       return false;
     } else {
       console.log(this.candidateForm.value);
-      this.candidateService.addCandidate(this.candidateForm.get('consultantImage').value,
-      this.candidateForm.value.consultantName,
-      this.candidateForm.value.email,
-      this.candidateForm.value.location,
-      this.candidateForm.value.preferredLocation,
-      this.candidateForm.value.phoneNumber,
-      this.candidateForm.value.panNumber,
-      this.candidateForm.value.adharNumber,
-      this.candidateForm.value.skillSet,
-      this.candidateForm.value.yearOfExperience,
-      this.candidateForm.value.createdBy,
-      this.candidateForm.get('resume').value
+      this.candidateService.addCandidate(this.candidateForm.value
+      // this.candidateForm.get('consultantImage').value,
+      // this.candidateForm.value.consultantName,
+      // this.candidateForm.value.email,
+      // this.candidateForm.value.location,
+      // this.candidateForm.value.preferredLocation,
+      // this.candidateForm.value.phoneNumber,
+      // this.candidateForm.value.panNumber,
+      // this.candidateForm.value.adharNumber,
+      // this.candidateForm.value.skillSet,
+      // this.candidateForm.value.yearOfExperience,
+      // this.candidateForm.value.createdBy
+      // this.candidateForm.get('resume').value
         ).subscribe(
         (res) => {
           this.notificationService.showSuccess('Candidate successfully created!',"");

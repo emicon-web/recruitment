@@ -1,6 +1,5 @@
 {
     "development": {
-        "PORT" : 5050,
         "HOST": "localhost",
         "USER": "root",
         "PASSWORD": "123456",
@@ -11,7 +10,6 @@
         "REFRESH_TOKEN":"emicon_refreshtoken" 
     },
     "production": {
-        "PORT" : 6060,
         "HOST": "localhost",
         "USER": "root",
         "PASSWORD": "123456",

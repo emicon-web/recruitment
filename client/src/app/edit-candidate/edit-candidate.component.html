@@ -118,11 +118,11 @@
     
             <div class="row">
               <div class="form-group col-md-6">
-                <label for="adharNumber3">Adhar Number</label>
+                <label for="adharNumber3">Aadhar Number</label>
                 <input class="form-control" type="text" formControlName="adharNumber">
                 <!-- error -->
                 <div class="text-danger" *ngIf="submitted && myForm.adharNumber.errors?.required">
-                  Enter your Adhar Number.
+                  Enter your Aadhar Number.
                 </div>
                 <div class="text-danger" *ngIf="submitted && myForm.adharNumber.errors?.pattern">
                   Enter Numbers Only
@@ -135,12 +135,12 @@
                 <label for="panNumber3">PAN Number</label>
                 <input class="form-control" type="text" formControlName="panNumber">
                 <!-- error -->
-                <div class="text-danger" *ngIf="submitted && myForm.panNumber.errors?.required">
+                <!-- <div class="text-danger" *ngIf="submitted && myForm.panNumber.errors?.required">
                   Enter your PAN Number.
                 </div>
                 <div class="text-danger" *ngIf="submitted && myForm.panNumber.errors?.pattern">
                   Enter Numbers Only
-                </div>
+                </div> -->
                 <!-- <div class="text-danger" *ngIf="submitted && myForm.panNumber.errors?.minLength || myForm.panNumber.errors?.maxLength">
                     PAN Number length should be 10.
                 </div> -->
