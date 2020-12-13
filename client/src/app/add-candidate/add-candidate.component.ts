@@ -40,7 +40,7 @@ export class AddCandidateComponent implements OnInit {
       preferredLocation : ['',[Validators.required]],
       phoneNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
       panNumber : [''],
-      adharNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
+      adharNumber : [''],
       skillSet : ['',[Validators.required]],
       yearOfExperience : ['',[Validators.required]],
       createdBy : [this.currentUserEmail,[Validators.required]],

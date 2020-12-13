@@ -37,7 +37,7 @@ export class EditCandidateComponent implements OnInit {
       preferredLocation : ['',[Validators.required]],
       phoneNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
       panNumber : [''],
-      adharNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
+      adharNumber : [''],
       skillSet : ['',[Validators.required]],
       yearOfExperience : ['',[Validators.required]]
     })
@@ -90,7 +90,7 @@ export class EditCandidateComponent implements OnInit {
       preferredLocation : ['',[Validators.required]],
       phoneNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
       panNumber : [''],
-      adharNumber : ['',[Validators.required, Validators.pattern('^[0-9]+$')]],
+      adharNumber : [''],
       skillSet : ['',[Validators.required]],
       yearOfExperience : ['',[Validators.required]]
     })

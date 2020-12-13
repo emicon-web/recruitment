@@ -417,7 +417,7 @@ let AddCandidateComponent = class AddCandidateComponent {
             preferredLocation: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             phoneNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('^[0-9]+$')]],
             panNumber: [''],
-            adharNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('^[0-9]+$')]],
+            adharNumber: [''],
             skillSet: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             yearOfExperience: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             createdBy: [this.currentUserEmail, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -868,7 +868,7 @@ let EditCandidateComponent = class EditCandidateComponent {
             preferredLocation: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]],
             phoneNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern('^[0-9]+$')]],
             panNumber: [''],
-            adharNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern('^[0-9]+$')]],
+            adharNumber: [''],
             skillSet: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]],
             yearOfExperience: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]]
         });
@@ -918,7 +918,7 @@ let EditCandidateComponent = class EditCandidateComponent {
             preferredLocation: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]],
             phoneNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern('^[0-9]+$')]],
             panNumber: [''],
-            adharNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern('^[0-9]+$')]],
+            adharNumber: [''],
             skillSet: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]],
             yearOfExperience: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]]
         });

@@ -41,7 +41,6 @@ const candidateSchema = new mongooose.Schema({
     },
     adharNumber : {
         type : Number,
-        required : true,
         minlength : 12,
         maxlength : 12
     },
