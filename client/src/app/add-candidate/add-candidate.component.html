@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row bg-secondary p-2">
     <div class="col-md-7">
-      <img src="../../assets/img/logo-white.png" alt="" class="logo-img" routerLink="/candidates" style="cursor: pointer;">
+      <img src="../../assets/img/logo-white.png" alt="" class="logo-img" routerLink="/dashboard" style="cursor: pointer;">
     </div>
     <div class="col-md-5">
       <button class="btn btn-danger float-right" (click)="logout()">Sign Out</button>
@@ -10,6 +10,7 @@
   </div>
 </div>
 <div class="row justify-content-center">
+  <button class="btn btn-danger mt-2" routerLink="/candidates">Back</button>
     <div class="col-md-8 register-employee">
       <!-- form card register -->
       <div class="card-body">
@@ -29,13 +30,13 @@
           
           <div class="form-group col-md-6">
             <label for="yearOfExperienceNumber3">Year Of Experience</label>
-            <input class="form-control" type="text" formControlName="yearOfExperience">
+            <input class="form-control" type="text" formControlName="yearOfExperience" placeholder="8.5">
               <!-- <div class="input-group">
                 <input class="form-control input-sm" type="text" formcontrolname="month">&nbsp;Year&nbsp;
                 <input class="form-control input-sm" type="text" formcontrolname="year">&nbsp;Month&nbsp;
               </div> -->
             <!-- error -->
-            <p>* Enter Year in Format 8.5 (8Years5Months)</p>
+            <p>*(8 = Year , . = To Differentiate between Year And Month, 5 = Month)</p>
             <div class="text-danger" *ngIf="submitted && myForm.yearOfExperience.errors?.required">
               Enter Year Of Experience.
             </div>
@@ -136,10 +137,10 @@
             <!-- error -->
             <!-- <div class="text-danger" *ngIf="submitted && myForm.panNumber.errors?.required">
               Enter your PAN Number.
-            </div>
+            </div> -->
             <div class="text-danger" *ngIf="submitted && myForm.panNumber.errors?.pattern">
               Enter Numbers Only
-            </div> -->
+            </div>
             <!-- <div class="text-danger" *ngIf="submitted && myForm.panNumber.errors?.minLength || myForm.panNumber.errors?.maxLength">
                 PAN Number length should be 10.
             </div> -->
@@ -155,14 +156,38 @@
               Enter Skills.
             </div>
           </div>
+          <div class="col-md-6 form-group">
+            <label>Please Select Source of Candidate</label>
+            <div class="row">
+              <label class="md-check">
+                <input type="radio" value="naukri.com" name="candidateSource" formControlName="candidateSource">
+                Naukri.com
+              </label>
+              <label class="md-check">
+                <input type="radio" value="institute" name="candidateSource" formControlName="candidateSource">     
+                Institute
+              </label>
+            </div>
+            <div *ngIf="myForm.candidateSource.value == 'institute'">
+              <div class="form-group">
+                    <label>Institute Name</label>
+                    <select class="form-control" formControlName="canidateCollege" id="canidateCollege">
+                        <option *ngFor="let institute of institutes" value={{institute.instituteName}}>
+                        {{institute.instituteName}}
+                        </option>
+                    </select>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <label for="skillNumber3">Counsultant Image</label><br>
               <input type="file" name="consultantImage" (change)="onFileSelect($event)" />
             </div>
           </div>
-        </div>
-        <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <label for="skillNumber3">Upload Resume</label><br>

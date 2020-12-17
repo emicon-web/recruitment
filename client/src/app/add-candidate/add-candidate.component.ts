@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { CandidateService } from '../services/candidate.service';
 import { NotificationService } from '../services/notification.service';
 import { UserService } from '../services/user.service';
+import { InstituteService } from '../services/institute.service';
 
 @Component({
   selector: 'app-add-candidate',
@@ -16,18 +17,31 @@ export class AddCandidateComponent implements OnInit {
   candidateForm : FormGroup;
   showErrorMessage : Boolean = false;
   currentUserEmail;
+  institutes = [];
+
   constructor(public fb: FormBuilder,
       private router: Router,
       private ngZone: NgZone,
       private notificationService: NotificationService,
       private candidateService : CandidateService,
-      private userService : UserService) { 
+      private userService : UserService,
+      private instituteService : InstituteService) { 
         this.mainForm();
       }
 
   ngOnInit() {
+    this.getInstitutes();
   }
 
+  getInstitutes(){
+    this.instituteService.getInstitutes().subscribe((data:any)=>{
+      this.institutes = data.institute;
+      let other = {instituteName : "Other"}
+      this.institutes.push(other);
+    },(err)=>{
+      console.log(err);
+    })
+  }
 
   mainForm(){
     const data = this.userService.currentUser();
@@ -44,6 +58,8 @@ export class AddCandidateComponent implements OnInit {
       skillSet : ['',[Validators.required]],
       yearOfExperience : ['',[Validators.required]],
       createdBy : [this.currentUserEmail,[Validators.required]],
+      candidateSource : ['',[Validators.required]],
+      canidateCollege :[''],
       resume: ['']
     })
   }
@@ -111,7 +127,7 @@ onFileSelectt(event) {
           this.ngZone.run(() => this.router.navigateByUrl('/candidates'))
         }, (error) => {
           console.log(error);
-          this.notificationService.showError(error,'');
+          this.notificationService.showError(error,'Validation Failed');
         });
     }
   }

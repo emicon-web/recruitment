@@ -1,0 +1,62 @@
+<div class="container-fluid">
+    <div class="row bg-secondary" style="padding-top : 10px; padding-bottom : 10px; ">
+        <div class="col-md-7">
+            <img src="../../assets/img/logo-white.png" alt="" class="logo-img" routerLink="/dashboard" style="cursor: pointer;">
+        </div>
+        <div class="col-md-5">
+            <button class="btn btn-danger float-right" (click)="logout()">Sign Out</button>
+            <button routerLink="/add-institute" class="btn btn-success float-right mr-3">Add Institutes</button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div #institutesList>
+        <div style="padding-bottom: 10px;padding-top: 10px;">
+        <div class="row">
+            <div class="col-sm-6">
+                <button routerLink="/dashboard" class="btn btn-danger mr-1">Back</button>
+                <button (click)="exportToExcel()" class="btn btn-success">Export To Excel</button>
+        </div>
+        <div class="col-sm-6">
+            <input class="float-right" type="text" [(ngModel)]="term" placeholder="Search">
+        </div>
+        </div>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Institute Name</th>
+                <th>University Of The Institute</th>
+                <th>Institute TPO Name</th>
+                <th>Institute Phone Number</th>
+                <th>Institute TPO Email</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let institute of institutes | filter:term | paginate : { itemsPerPage:5, currentPage:p}">
+                <td>{{institute.instituteName}}</td>
+                <td>{{institute.universityOfTheInstitute}}</td>
+                <td>{{institute.instituteTpoName}}</td>
+                <td>{{institute.instituteTpoPhoneNumber}}</td>
+                <td>{{institute.instituteTpoEmail}}</td>
+                <td>
+                    <label class="switch">
+                        <input type="checkbox" [checked]="institute.instituteStatus" (change)="changeInstituteStatus(institute.instituteName,institute.instituteStatus)">
+                        <span class="slider round"></span>
+                    </label>
+                </td>
+                <!-- <td class="text-center edit-block">
+                    <span class="edit" [routerLink]="['/edit-institute/', institute._id]">
+                    <button type="button" class="btn btn-success btn-sm">Edit</button>
+                    </span>
+                    <span class="delete" (click)="removeEmployee(employee, i)">
+                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                    </span>
+                </td> -->
+            </tr>
+            </tbody>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </table>
+    </div>
+</div>

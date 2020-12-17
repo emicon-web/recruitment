@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row bg-secondary" style="padding-top : 10px; padding-bottom : 10px; ">
+        <div class="col-md-7">
+            <img src="../../assets/img/logo-white.png" alt="" class="logo-img" routerLink="/dashboard" style="cursor: pointer;">
+        </div>
+        <div class="col-md-5">
+            <button class="btn btn-danger float-right" (click)="logout()">Sign Out</button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="text-align: center;">
+            <h1>Emicon Portal</h1>
+            <p style="font-weight: 700;">Add Institutes Candidates </p>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <div class='box'  style="float: right;" routerLink="/institutes">
+                <div class='wave -one'></div>
+                <div class='wave -two'></div>
+                <div class='wave -three'></div>
+                <div class='title'><i class="fa fa-university" aria-hidden="true"></i>Institutes</div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class='box' routerLink="/candidates">
+                <div class='wave -one'></div>
+                <div class='wave -two'></div>
+                <div class='wave -three'></div>
+                <div class='title'><i class="fa fa-users" aria-hidden="true"></i>Candidates</div>
+            </div>
+        </div>
+    </div>
+</div>

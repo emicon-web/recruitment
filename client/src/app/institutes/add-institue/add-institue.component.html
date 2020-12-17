@@ -1,0 +1,122 @@
+<div class="container-fluid">
+    <div class="row bg-secondary p-2">
+        <div class="col-md-7">
+            <img src="../../assets/img/logo-white.png" alt="" class="logo-img" routerLink="/dashboard" style="cursor: pointer;">
+        </div>
+    <div class="col-md-5">
+        <button class="btn btn-danger float-right" (click)="logout()">Sign Out</button>
+    </div>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <button class="btn btn-danger mt-2" routerLink="/institutes">Back</button>
+    <div class="col-md-8 register-employee">
+        <!-- form card register -->
+        <div class="card-body">
+            <form [formGroup]="instituteForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+            <div class="row">
+            <div class="form-group col-md-6">
+                <label for="instituteName">Institute Name</label>
+                <input class="form-control" type="text" formControlName="instituteName">
+                <!-- error -->
+                <div class="text-danger" *ngIf="submitted && myForm.instituteName.errors?.required">
+                    Institute Name is required.
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="universityOfTheInstitute">University of the Institute</label>
+                <input class="form-control" type="text" formControlName="universityOfTheInstitute">
+                <!-- error -->
+                <div class="text-danger" *ngIf="submitted && myForm.universityOfTheInstitute.errors?.required">
+                    University of the Institute Name is required.
+                </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="instituteTpoName">Name of TPO</label>
+                    <input class="form-control" type="text" formControlName="instituteTpoName">
+                    <!-- error -->
+                    <div class="text-danger" *ngIf="submitted && myForm.instituteTpoName.errors?.required">
+                        Name of TPO is required.
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="instituteTpoPhoneNumber">Phone number of TPO</label>
+                    <input class="form-control" type="text" formControlName="instituteTpoPhoneNumber">
+                    <!-- error -->
+                    <div class="text-danger" *ngIf="submitted && myForm.instituteTpoPhoneNumber.errors?.required">
+                        Phone number of TPO is required.
+                    </div>
+                    <div class="text-danger" *ngIf="submitted && myForm.instituteTpoPhoneNumber.errors?.pattern">
+                        Enter Numbers Only
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="instituteTpoEmail">Email ID of TPO</label>
+                        <input class="form-control" type="text" formControlName="instituteTpoEmail">
+                        <!-- error -->
+                        <div class="text-danger" *ngIf="submitted && myForm.instituteTpoEmail.errors?.required">
+                            Email ID of TPO is required.
+                        </div>
+                        <div class="text-danger" *ngIf="submitted && myForm.instituteTpoEmail.errors?.pattern">
+                            Enter valid email.
+                        </div>
+                    </div>
+            </div>
+            <div formGroupName="address">
+                <label for="address">Institute Address</label>
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <input type="text" class="form-control " formControlName="line1" placeholder="Address Line 1" 
+                        [ngClass]="{ 'is-invalid': formSubmitted && ff.line1.errors }">
+                        <div *ngIf="formSubmitted && ff.line1.errors">
+                            <div *ngIf="ff.line1.errors.required">Address Line 1 is required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <input type="text" class="form-control " formControlName="line2" placeholder="Address Line 2" 
+                        [ngClass]="{ 'is-invalid': formSubmitted && ff.line2.errors }">
+                        <div *ngIf="formSubmitted && ff.line2.errors" class="invalid-feedback">
+                            <div *ngIf="ff.line2.errors.required">Address Line 2 is required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <input type="text" class="form-control" formControlName="city" placeholder="City" 
+                        [ngClass]="{ 'is-invalid': formSubmitted && ff.city.errors }">
+                        <div *ngIf="formSubmitted && ff.city.errors" class="invalid-feedback">
+                            <div *ngIf="ff.city.errors.required">City name is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <input type="text" class="form-control" formControlName="pinCode" placeholder="Zip Code" 
+                        [ngClass]="{ 'is-invalid': formSubmitted && ff.pinCode.errors }">
+                        <div *ngIf="formSubmitted && ff.pinCode.errors" class="invalid-feedback">
+                            <div *ngIf="ff.pinCode.errors.required">Zip Code is required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <input type="text" class="form-control" formControlName="state" placeholder="State" 
+                        [ngClass]="{ 'is-invalid': formSubmitted && ff.state.errors }">
+                    <div *ngIf="formSubmitted && ff.state.errors" class="invalid-feedback">
+                        <div *ngIf="ff.state.errors.required">State name is required</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            <div class="form-group col-md-6">
+                <button class="btn btn-success btn-lg btn-block" type="submit">Add Institute</button>
+            </div>
+            <div class="col-md-6 form-group">
+                <button class="btn btn-danger btn-lg btn-block" type="reset">Cancel</button>
+            </div>
+            </div>
+            </form>
+        </div>
+    </div><!-- form card register -->
+    </div>

@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row bg-secondary" style="padding-top : 10px; padding-bottom : 10px; ">
     <div class="col-md-7">
-      <img src="../../assets/img/logo-white.png" alt="" class="logo-img" routerLink="/candidates" style="cursor: pointer;">
+      <img src="../../assets/img/logo-white.png" alt="" class="logo-img" routerLink="/dashboard" style="cursor: pointer;">
     </div>
     <div class="col-md-5">
       <button class="btn btn-danger float-right" (click)="logout()">Sign Out</button>
@@ -14,14 +14,15 @@
     <!-- <p *ngIf="candidates.length <= 0" class="no-data text-center">There is no Candidates added yet!</p> -->
     <div #candidatesList>
       <div style="padding-bottom: 10px;padding-top: 10px;">
-       <div class="row">
+      <div class="row">
         <div class="col-sm-6">
-         <button (click)="exportToExcel()" class="btn btn-success">Export To Excel</button> 
+          <button routerLink="/dashboard" class="btn btn-danger mr-1">Back</button>
+          <button (click)="exportToExcel()" class="btn btn-success">Export To Excel</button>
         </div>
         <div class="col-sm-6">
           <input class="float-right" type="text" [(ngModel)]="term" placeholder="Search">
         </div>
-       </div>
+      </div>
       </div>
     <!-- Employee list -->
     <table class="table">

@@ -5,6 +5,7 @@ const cors = require('cors');
 const error = require('../middleware/error');
 const candidate = require('../api/candidate.router');
 const users = require('../api/users.router');
+const institute = require('../api/institute.router');
 
 
 
@@ -17,5 +18,6 @@ module.exports = function(app){
     
     app.use('/users',users);
     app.use('/candidate',candidate);
+    app.use('/institute',institute);
     app.use(error);
 }

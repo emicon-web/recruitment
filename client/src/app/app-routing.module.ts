@@ -4,6 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddCandidateComponent } from './add-candidate/add-candidate.component';
 import { EditCandidateComponent } from './edit-candidate/edit-candidate.component';
 import { CandidateListComponent } from './candidate-list/candidate-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { InstitueListComponent } from './institutes/institue-list/institue-list.component';
+import { AddInstitueComponent } from './institutes/add-institue/add-institue.component';
+import { EditInstitueComponent } from './institutes/edit-institue/edit-institue.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -27,6 +31,26 @@ const routes: Routes = [
   {
     path: 'candidates',
     component: CandidateListComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'institutes',
+    component: InstitueListComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'add-institute',
+    component: AddInstitueComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'edit-institute/:id',
+    component: EditInstitueComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
     canActivate: [AuthGuard]
   },
   {

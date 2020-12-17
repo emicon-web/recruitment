@@ -18,6 +18,10 @@ import { AddCandidateComponent } from './add-candidate/add-candidate.component';
 import { EditCandidateComponent } from './edit-candidate/edit-candidate.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { InstitueListComponent } from './institutes/institue-list/institue-list.component';
+import { AddInstitueComponent } from './institutes/add-institue/add-institue.component';
+import { EditInstitueComponent } from './institutes/edit-institue/edit-institue.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { SignupComponent } from './signup/signup.component';
     AddCandidateComponent,
     EditCandidateComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    DashboardComponent,
+    InstitueListComponent,
+    AddInstitueComponent,
+    EditInstitueComponent
   ],
   imports: [
     BrowserModule,

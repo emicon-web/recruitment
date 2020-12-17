@@ -48,7 +48,7 @@ loginUser() {
     (data: any) => {
       this.notifyService.showSuccess('Login Successfully',"");
       localStorage.setItem('Token', data.token);
-      this.router.navigate([ `/candidates`]);
+      this.router.navigate([ `/dashboard`]);
     },
     (err: HttpErrorResponse) => {
       if (err.error.error) {

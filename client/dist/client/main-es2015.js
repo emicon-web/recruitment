@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row bg-secondary p-2\">\n    <div class=\"col-md-7\">\n      <img src=\"../../assets/img/logo-white.png\" alt=\"\" class=\"logo-img\" routerLink=\"/candidates\" style=\"cursor: pointer;\">\n    </div>\n    <div class=\"col-md-5\">\n      <button class=\"btn btn-danger float-right\" (click)=\"logout()\">Sign Out</button>\n      <button routerLink=\"/add-candidate\" class=\"btn btn-success float-right mr-3\">Add Candidate</button>\n    </div>\n  </div>\n</div>\n<div class=\"row justify-content-center\">\n    <div class=\"col-md-8 register-employee\">\n      <!-- form card register -->\n      <div class=\"card-body\">\n        <form [formGroup]=\"candidateForm\" (ngSubmit)=\"onSubmit()\" enctype=\"multipart/form-data\">\n        <div class=\"row\">\n          <div class=\"form-group col-md-6\">\n            <label for=\"inputName\">Consultant Name</label>\n            <input class=\"form-control\" type=\"text\" formControlName=\"consultantName\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.consultantName.errors?.required\">\n                Consultant Name is required.\n            </div>\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.consultantName.errors?.minLength || myForm.consultantName.errors?.maxLength\">\n                Consultant Name length should be 3 to 25.\n            </div> -->\n          </div>\n          \n          <div class=\"form-group col-md-6\">\n            <label for=\"yearOfExperienceNumber3\">Year Of Experience</label>\n            <input class=\"form-control\" type=\"text\" formControlName=\"yearOfExperience\">\n              <!-- <div class=\"input-group\">\n                <input class=\"form-control input-sm\" type=\"text\" formcontrolname=\"month\">&nbsp;Year&nbsp;\n                <input class=\"form-control input-sm\" type=\"text\" formcontrolname=\"year\">&nbsp;Month&nbsp;\n              </div> -->\n            <!-- error -->\n            <p>* Enter Year in Format 8.5 (8Years5Months)</p>\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.yearOfExperience.errors?.required\">\n              Enter Year Of Experience.\n            </div>\n            <div class=\"text-danger\" *ngIf=\"showErrorMessage == true\">\n              Month should be less then 12\n            </div>\n          </div>\n\n          \n        </div>\n  \n          <!-- <div class=\"form-group col-md-6\">\n            <label for=\"inputPassword3\">Designation</label>\n            <select class=\"custom-select form-control\" (change)=\"updateProfile($event.target.value)\"\n              formControlName=\"designation\">\n              <option value=\"\">Choose...</option>\n              <option *ngFor=\"let employeeProfile of EmployeeProfile\" value=\"{{employeeProfile}}\">{{employeeProfile}}\n              </option>\n            </select>\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.designation.errors?.required\">\n              Choose designation.\n            </div>\n          </div>  -->\n        <div class=\"row\">\n          <div class=\"form-group col-md-6\">\n            <label for=\"inputVerify3\">Mobile No</label>\n            <input class=\"form-control\" type=\"text\" maxlength=\"10\" formControlName=\"phoneNumber\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.phoneNumber.errors?.required\">\n              Enter your phone number.\n            </div>\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.phoneNumber.errors?.pattern\">\n              Enter Numbers Only\n            </div>\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.phoneNumber.errors?.minLength || myForm.phoneNumber.errors?.maxLength\">\n                Phone Number length should be 10.\n            </div> -->\n          </div>\n\n          <div class=\"form-group col-md-6\">\n            <label for=\"inputEmail3\">Email</label>\n            <input class=\"form-control\" type=\"text\" formControlName=\"email\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.email.errors?.required\">\n              Enter your email.\n            </div>\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.email.errors?.pattern\">\n              Enter valid email.\n            </div>\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"form-group col-md-6\">\n            <label for=\"locationVerify3\">Location</label>\n            <input class=\"form-control\" type=\"text\" formControlName=\"location\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.location.errors?.required\">\n              Enter your Location.\n            </div>\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.location.errors?.minLength || myForm.location.errors?.maxLength\">\n                Location length should be 3 to 25.\n            </div> -->\n          </div>\n          <div class=\"form-group col-md-6\">\n            <label for=\"prefferedLocationVerify3\">Preferred Location</label>\n            <input class=\"form-control\" type=\"text\" formControlName=\"preferredLocation\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.preferredLocation.errors?.required\">\n              Enter your Preferred Location.\n            </div>\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.preferredLocation.errors?.minLength || myForm.preferredLocation.errors?.maxLength\">\n                Preffered Location length should be 3 to 25.\n            </div> -->\n          </div>\n\n          \n        </div>\n\n        <div class=\"row\">\n          <div class=\"form-group col-md-6\">\n            <label for=\"adharNumber3\">Aadhar Number</label>\n            <input class=\"form-control\" type=\"text\" maxlength=\"12\" formControlName=\"adharNumber\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.adharNumber.errors?.required\">\n              Enter your Aadhar Number.\n            </div>\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.adharNumber.errors?.pattern\">\n              Enter Numbers Only\n            </div>\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.adharNumber.errors?.minLength || myForm.adharNumber.errors?.maxLength\">\n                Aadhar Number length should be 12.\n            </div> -->\n          </div>\n          <div class=\"form-group col-md-6\">\n            <label for=\"panNumber3\">PAN Number</label>\n            <input class=\"form-control\" type=\"text\" maxlength=\"10\" formControlName=\"panNumber\">\n            <!-- error -->\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.panNumber.errors?.required\">\n              Enter your PAN Number.\n            </div>\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.panNumber.errors?.pattern\">\n              Enter Numbers Only\n            </div> -->\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.panNumber.errors?.minLength || myForm.panNumber.errors?.maxLength\">\n                PAN Number length should be 10.\n            </div> -->\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"col-md-6 form-group\">\n            <label for=\"skillNumber3\">Skill Set</label>\n            <input class=\"form-control\" type=\"text\" formControlName=\"skillSet\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.skillSet.errors?.required\">\n              Enter Skills.\n            </div>\n          </div>\n          <div class=\"col-md-6\">\n            <div class=\"form-group\">\n              <label for=\"skillNumber3\">Counsultant Image</label><br>\n              <input type=\"file\" name=\"consultantImage\" (change)=\"onFileSelect($event)\" />\n            </div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <div class=\"form-group\">\n              <label for=\"skillNumber3\">Upload Resume</label><br>\n              <input type=\"file\" name=\"resume\" (change)=\"onFileSelectt($event)\" />\n            </div>\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"form-group col-md-6\">\n            <button class=\"btn btn-success btn-lg btn-block\" type=\"submit\">Add Candidate</button>\n          </div>\n          <div class=\"col-md-6 form-group\">\n            <button class=\"btn btn-danger btn-lg btn-block\" type=\"reset\">Cancel</button>\n          </div>\n        </div>\n        </form>\n  \n      </div>\n    </div><!-- form card register -->\n  </div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row bg-secondary p-2\">\n    <div class=\"col-md-7\">\n      <img src=\"../../assets/img/logo-white.png\" alt=\"\" class=\"logo-img\" routerLink=\"/dashboard\" style=\"cursor: pointer;\">\n    </div>\n    <div class=\"col-md-5\">\n      <button class=\"btn btn-danger float-right\" (click)=\"logout()\">Sign Out</button>\n      <button routerLink=\"/add-candidate\" class=\"btn btn-success float-right mr-3\">Add Candidate</button>\n    </div>\n  </div>\n</div>\n<div class=\"row justify-content-center\">\n  <button class=\"btn btn-danger mt-2\" routerLink=\"/candidates\">Back</button>\n    <div class=\"col-md-8 register-employee\">\n      <!-- form card register -->\n      <div class=\"card-body\">\n        <form [formGroup]=\"candidateForm\" (ngSubmit)=\"onSubmit()\" enctype=\"multipart/form-data\">\n        <div class=\"row\">\n          <div class=\"form-group col-md-6\">\n            <label for=\"inputName\">Consultant Name</label>\n            <input class=\"form-control\" type=\"text\" formControlName=\"consultantName\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.consultantName.errors?.required\">\n                Consultant Name is required.\n            </div>\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.consultantName.errors?.minLength || myForm.consultantName.errors?.maxLength\">\n                Consultant Name length should be 3 to 25.\n            </div> -->\n          </div>\n          \n          <div class=\"form-group col-md-6\">\n            <label for=\"yearOfExperienceNumber3\">Year Of Experience</label>\n            <input class=\"form-control\" type=\"text\" formControlName=\"yearOfExperience\" placeholder=\"8.5\">\n              <!-- <div class=\"input-group\">\n                <input class=\"form-control input-sm\" type=\"text\" formcontrolname=\"month\">&nbsp;Year&nbsp;\n                <input class=\"form-control input-sm\" type=\"text\" formcontrolname=\"year\">&nbsp;Month&nbsp;\n              </div> -->\n            <!-- error -->\n            <p>*(8 = Year , . = To Differentiate between Year And Month, 5 = Month)</p>\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.yearOfExperience.errors?.required\">\n              Enter Year Of Experience.\n            </div>\n            <div class=\"text-danger\" *ngIf=\"showErrorMessage == true\">\n              Month should be less then 12\n            </div>\n          </div>\n\n          \n        </div>\n  \n          <!-- <div class=\"form-group col-md-6\">\n            <label for=\"inputPassword3\">Designation</label>\n            <select class=\"custom-select form-control\" (change)=\"updateProfile($event.target.value)\"\n              formControlName=\"designation\">\n              <option value=\"\">Choose...</option>\n              <option *ngFor=\"let employeeProfile of EmployeeProfile\" value=\"{{employeeProfile}}\">{{employeeProfile}}\n              </option>\n            </select>\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.designation.errors?.required\">\n              Choose designation.\n            </div>\n          </div>  -->\n        <div class=\"row\">\n          <div class=\"form-group col-md-6\">\n            <label for=\"inputVerify3\">Mobile No</label>\n            <input class=\"form-control\" type=\"text\" maxlength=\"10\" formControlName=\"phoneNumber\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.phoneNumber.errors?.required\">\n              Enter your phone number.\n            </div>\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.phoneNumber.errors?.pattern\">\n              Enter Numbers Only\n            </div>\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.phoneNumber.errors?.minLength || myForm.phoneNumber.errors?.maxLength\">\n                Phone Number length should be 10.\n            </div> -->\n          </div>\n\n          <div class=\"form-group col-md-6\">\n            <label for=\"inputEmail3\">Email</label>\n            <input class=\"form-control\" type=\"text\" formControlName=\"email\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.email.errors?.required\">\n              Enter your email.\n            </div>\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.email.errors?.pattern\">\n              Enter valid email.\n            </div>\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"form-group col-md-6\">\n            <label for=\"locationVerify3\">Location</label>\n            <input class=\"form-control\" type=\"text\" formControlName=\"location\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.location.errors?.required\">\n              Enter your Location.\n            </div>\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.location.errors?.minLength || myForm.location.errors?.maxLength\">\n                Location length should be 3 to 25.\n            </div> -->\n          </div>\n          <div class=\"form-group col-md-6\">\n            <label for=\"prefferedLocationVerify3\">Preferred Location</label>\n            <input class=\"form-control\" type=\"text\" formControlName=\"preferredLocation\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.preferredLocation.errors?.required\">\n              Enter your Preferred Location.\n            </div>\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.preferredLocation.errors?.minLength || myForm.preferredLocation.errors?.maxLength\">\n                Preffered Location length should be 3 to 25.\n            </div> -->\n          </div>\n\n          \n        </div>\n\n        <div class=\"row\">\n          <div class=\"form-group col-md-6\">\n            <label for=\"adharNumber3\">Aadhar Number</label>\n            <input class=\"form-control\" type=\"text\" maxlength=\"12\" formControlName=\"adharNumber\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.adharNumber.errors?.required\">\n              Enter your Aadhar Number.\n            </div>\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.adharNumber.errors?.pattern\">\n              Enter Numbers Only\n            </div>\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.adharNumber.errors?.minLength || myForm.adharNumber.errors?.maxLength\">\n                Aadhar Number length should be 12.\n            </div> -->\n          </div>\n          <div class=\"form-group col-md-6\">\n            <label for=\"panNumber3\">PAN Number</label>\n            <input class=\"form-control\" type=\"text\" maxlength=\"10\" formControlName=\"panNumber\">\n            <!-- error -->\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.panNumber.errors?.required\">\n              Enter your PAN Number.\n            </div> -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.panNumber.errors?.pattern\">\n              Enter Numbers Only\n            </div>\n            <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.panNumber.errors?.minLength || myForm.panNumber.errors?.maxLength\">\n                PAN Number length should be 10.\n            </div> -->\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"col-md-6 form-group\">\n            <label for=\"skillNumber3\">Skill Set</label>\n            <input class=\"form-control\" type=\"text\" formControlName=\"skillSet\">\n            <!-- error -->\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.skillSet.errors?.required\">\n              Enter Skills.\n            </div>\n          </div>\n          <div class=\"col-md-6 form-group\">\n            <label>Please Select Source of Candidate</label>\n            <div class=\"row\">\n              <label class=\"md-check\">\n                <input type=\"radio\" value=\"naukri.com\" name=\"candidateSource\" formControlName=\"candidateSource\">\n                Naukri.com\n              </label>\n              <label class=\"md-check\">\n                <input type=\"radio\" value=\"institute\" name=\"candidateSource\" formControlName=\"candidateSource\">     \n                Institute\n              </label>\n            </div>\n            <div *ngIf=\"myForm.candidateSource.value == 'institute'\">\n              <div class=\"form-group\">\n                    <label>Institute Name</label>\n                    <select class=\"form-control\" formControlName=\"canidateCollege\" id=\"canidateCollege\">\n                        <option *ngFor=\"let institute of institutes\" value={{institute.instituteName}}>\n                        {{institute.instituteName}}\n                        </option>\n                    </select>\n              </div>\n            </div>\n          </div>\n          \n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <div class=\"form-group\">\n              <label for=\"skillNumber3\">Counsultant Image</label><br>\n              <input type=\"file\" name=\"consultantImage\" (change)=\"onFileSelect($event)\" />\n            </div>\n          </div>\n          <div class=\"col-md-6\">\n            <div class=\"form-group\">\n              <label for=\"skillNumber3\">Upload Resume</label><br>\n              <input type=\"file\" name=\"resume\" (change)=\"onFileSelectt($event)\" />\n            </div>\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"form-group col-md-6\">\n            <button class=\"btn btn-success btn-lg btn-block\" type=\"submit\">Add Candidate</button>\n          </div>\n          <div class=\"col-md-6 form-group\">\n            <button class=\"btn btn-danger btn-lg btn-block\" type=\"reset\">Cancel</button>\n          </div>\n        </div>\n        </form>\n  \n      </div>\n    </div><!-- form card register -->\n  </div>");
 
 /***/ }),
 
@@ -58,7 +58,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row bg-secondary\" style=\"padding-top : 10px; padding-bottom : 10px; \">\n    <div class=\"col-md-7\">\n      <img src=\"../../assets/img/logo-white.png\" alt=\"\" class=\"logo-img\" routerLink=\"/candidates\" style=\"cursor: pointer;\">\n    </div>\n    <div class=\"col-md-5\">\n      <button class=\"btn btn-danger float-right\" (click)=\"logout()\">Sign Out</button>\n      <button routerLink=\"/add-candidate\" class=\"btn btn-success float-right mr-3\">Add Candidate</button>\n    </div>\n  </div>\n</div>\n<div class=\"container-fluid\">\n    <!-- No data message -->\n    <!-- <p *ngIf=\"candidates.length <= 0\" class=\"no-data text-center\">There is no Candidates added yet!</p> -->\n    <div #candidatesList>\n      <div style=\"padding-bottom: 10px;padding-top: 10px;\">\n       <div class=\"row\">\n        <div class=\"col-sm-6\">\n         <button (click)=\"exportToExcel()\" class=\"btn btn-success\">Export To Excel</button> \n        </div>\n        <div class=\"col-sm-6\">\n          <input class=\"float-right\" type=\"text\" [(ngModel)]=\"term\" placeholder=\"Search\">\n        </div>\n       </div>\n      </div>\n    <!-- Employee list -->\n    <table class=\"table\">\n      <thead>\n        <tr>\n          <th>Consultant Name</th>\n          <th>Email</th>\n          <th>Location</th>\n          <th>Preffered Location</th>\n          <th>Phone No.</th>\n          <th>PAN No.</th>\n          <th>Adhar No.</th>\n          <th>Skill Set</th>\n          <th>Year Of Expirence</th>\n          <th>Edit</th>\n        </tr>\n      </thead>\n      <tbody>\n        <!-- <ngx-spinner></ngx-spinner> -->\n        <tr *ngFor=\"let candidate of candidates | filter:term | paginate : { itemsPerPage:5, currentPage:p}\">\n          <td>{{candidate.consultantName}}</td>\n          <td>{{candidate.email}}</td>\n          <td>{{candidate.location}}</td>\n          <td>{{candidate.preferredLocation}}</td>\n          <td>{{candidate.phoneNumber}}</td>\n          <td>{{candidate.panNumber}}</td>\n          <td>{{candidate.adharNumber}}</td>\n          <td>{{candidate.skillSet}}</td>\n          <td>{{candidate.yearOfExperience}}</td>\n          <td class=\"text-center edit-block\">\n            <span class=\"edit\" [routerLink]=\"['/edit-candidate/', candidate._id]\">\n              <button type=\"button\" class=\"btn btn-success btn-sm\">Edit</button>\n            </span>\n            <!-- <span class=\"delete\" (click)=\"removeEmployee(employee, i)\">\n              <button type=\"button\" class=\"btn btn-danger btn-sm\">Delete</button>\n            </span> -->\n          </td>\n        </tr>\n      </tbody>\n      <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n    </table>\n    </div>\n  </div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row bg-secondary\" style=\"padding-top : 10px; padding-bottom : 10px; \">\n    <div class=\"col-md-7\">\n      <img src=\"../../assets/img/logo-white.png\" alt=\"\" class=\"logo-img\" routerLink=\"/dashboard\" style=\"cursor: pointer;\">\n    </div>\n    <div class=\"col-md-5\">\n      <button class=\"btn btn-danger float-right\" (click)=\"logout()\">Sign Out</button>\n      <button routerLink=\"/add-candidate\" class=\"btn btn-success float-right mr-3\">Add Candidate</button>\n    </div>\n  </div>\n</div>\n<div class=\"container-fluid\">\n    <!-- No data message -->\n    <!-- <p *ngIf=\"candidates.length <= 0\" class=\"no-data text-center\">There is no Candidates added yet!</p> -->\n    <div #candidatesList>\n      <div style=\"padding-bottom: 10px;padding-top: 10px;\">\n      <div class=\"row\">\n        <div class=\"col-sm-6\">\n          <button routerLink=\"/dashboard\" class=\"btn btn-danger mr-1\">Back</button>\n          <button (click)=\"exportToExcel()\" class=\"btn btn-success\">Export To Excel</button>\n        </div>\n        <div class=\"col-sm-6\">\n          <input class=\"float-right\" type=\"text\" [(ngModel)]=\"term\" placeholder=\"Search\">\n        </div>\n      </div>\n      </div>\n    <!-- Employee list -->\n    <table class=\"table\">\n      <thead>\n        <tr>\n          <th>Consultant Name</th>\n          <th>Email</th>\n          <th>Location</th>\n          <th>Preffered Location</th>\n          <th>Phone No.</th>\n          <th>PAN No.</th>\n          <th>Adhar No.</th>\n          <th>Skill Set</th>\n          <th>Year Of Expirence</th>\n          <th>Edit</th>\n        </tr>\n      </thead>\n      <tbody>\n        <!-- <ngx-spinner></ngx-spinner> -->\n        <tr *ngFor=\"let candidate of candidates | filter:term | paginate : { itemsPerPage:5, currentPage:p}\">\n          <td>{{candidate.consultantName}}</td>\n          <td>{{candidate.email}}</td>\n          <td>{{candidate.location}}</td>\n          <td>{{candidate.preferredLocation}}</td>\n          <td>{{candidate.phoneNumber}}</td>\n          <td>{{candidate.panNumber}}</td>\n          <td>{{candidate.adharNumber}}</td>\n          <td>{{candidate.skillSet}}</td>\n          <td>{{candidate.yearOfExperience}}</td>\n          <td class=\"text-center edit-block\">\n            <span class=\"edit\" [routerLink]=\"['/edit-candidate/', candidate._id]\">\n              <button type=\"button\" class=\"btn btn-success btn-sm\">Edit</button>\n            </span>\n            <!-- <span class=\"delete\" (click)=\"removeEmployee(employee, i)\">\n              <button type=\"button\" class=\"btn btn-danger btn-sm\">Delete</button>\n            </span> -->\n          </td>\n        </tr>\n      </tbody>\n      <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n    </table>\n    </div>\n  </div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dashboard/dashboard.component.html":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dashboard/dashboard.component.html ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <div class=\"row bg-secondary\" style=\"padding-top : 10px; padding-bottom : 10px; \">\n        <div class=\"col-md-7\">\n            <img src=\"../../assets/img/logo-white.png\" alt=\"\" class=\"logo-img\" routerLink=\"/dashboard\" style=\"cursor: pointer;\">\n        </div>\n        <div class=\"col-md-5\">\n            <button class=\"btn btn-danger float-right\" (click)=\"logout()\">Sign Out</button>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid\">\n    <div class=\"row mt-5\">\n        <div class=\"col-md-2\"></div>\n        <div class=\"col-md-8\" style=\"text-align: center;\">\n            <h1>Emicon Portal</h1>\n            <p style=\"font-weight: 700;\">Add Institutes Candidates </p>\n        </div>\n    </div>\n    <div class=\"row mt-3\">\n        <div class=\"col-md-1\"></div>\n        <div class=\"col-md-5\">\n            <div class='box'  style=\"float: right;\" routerLink=\"/institutes\">\n                <div class='wave -one'></div>\n                <div class='wave -two'></div>\n                <div class='wave -three'></div>\n                <div class='title'><i class=\"fa fa-university\" aria-hidden=\"true\"></i>Institutes</div>\n            </div>\n        </div>\n        <div class=\"col-md-5\">\n            <div class='box' routerLink=\"/candidates\">\n                <div class='wave -one'></div>\n                <div class='wave -two'></div>\n                <div class='wave -three'></div>\n                <div class='title'><i class=\"fa fa-users\" aria-hidden=\"true\"></i>Candidates</div>\n            </div>\n        </div>\n    </div>\n</div>\n");
 
 /***/ }),
 
@@ -71,7 +84,46 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row bg-secondary p-2\">\n    <div class=\"col-md-7\">\n      <img src=\"../../assets/img/logo-white.png\" alt=\"\" class=\"logo-img\" routerLink=\"/candidates\" style=\"cursor: pointer;\">\n    </div>\n    <div class=\"col-md-5\">\n      <button class=\"btn btn-danger float-right\" (click)=\"logout()\">Sign Out</button>\n      <button routerLink=\"/add-candidate\" class=\"btn btn-success float-right mr-3\">Add Candidate</button>\n    </div>\n  </div>\n</div>\n<div class=\"row justify-content-center mt-2\">\n    <div class=\"col-md-8 register-employee\">\n      <!-- form card register -->\n      <div class=\"card card-outline-secondary\">\n        <div class=\"card-header\">\n          <h3 class=\"mb-0\">Edit Candidate</h3>\n          <button routerLink=\"/candidates\" class=\"mb-0 btn btn-success float-right\">Back</button>\n        </div>\n        <div class=\"card-body\">\n          <form [formGroup]=\"editForm\" (ngSubmit)=\"onSubmit()\">\n            <div class=\"row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"inputName\">Consultant Name</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"consultantName\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.consultantName.errors?.required\">\n                    Consultant Name is required.\n                </div>\n                <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.consultantName.errors?.minLength || myForm.consultantName.errors?.maxLength\">\n                    Consultant Name length should be 3 to 25.\n                </div> -->\n              </div>\n              \n              <div class=\"form-group col-md-6\">\n                <label for=\"yearOfExperienceNumber3\">Year Of Experience</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"yearOfExperience\">\n                  <!-- <div class=\"input-group\">\n                    <input class=\"form-control input-sm\" type=\"text\" formcontrolname=\"month\">&nbsp;Year&nbsp;\n                    <input class=\"form-control input-sm\" type=\"text\" formcontrolname=\"year\">&nbsp;Month&nbsp;\n                  </div> -->\n                <!-- error -->\n                <p>* Enter Year in Format 8.5 (8Years5Months)</p>\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.yearOfExperience.errors?.required\">\n              Enter Year Of Experience.\n            </div>\n            <div class=\"text-danger\" *ngIf=\"showErrorMessage == true\">\n              Month should be less then 12\n            </div>\n              </div>\n    \n              \n            </div>\n      \n              <!-- <div class=\"form-group col-md-6\">\n                <label for=\"inputPassword3\">Designation</label>\n                <select class=\"custom-select form-control\" (change)=\"updateProfile($event.target.value)\"\n                  formControlName=\"designation\">\n                  <option value=\"\">Choose...</option>\n                  <option *ngFor=\"let employeeProfile of EmployeeProfile\" value=\"{{employeeProfile}}\">{{employeeProfile}}\n                  </option>\n                </select>\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.designation.errors?.required\">\n                  Choose designation.\n                </div>\n              </div>  -->\n            <div class=\"row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"inputVerify3\">Mobile No</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"phoneNumber\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.phoneNumber.errors?.required\">\n                  Enter your phone number.\n                </div>\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.phoneNumber.errors?.pattern\">\n                  Enter Numbers Only\n                </div>\n                <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.phoneNumber.errors?.minLength || myForm.phoneNumber.errors?.maxLength\">\n                    Phone Number length should be 10.\n                </div> -->\n              </div>\n    \n              <div class=\"form-group col-md-6\">\n                <label for=\"inputEmail3\">Email</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"email\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.email.errors?.required\">\n                  Enter your email.\n                </div>\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.email.errors?.pattern\">\n                  Enter valid email.\n                </div>\n              </div>\n            </div>\n    \n            <div class=\"row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"locationVerify3\">Location</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"location\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.location.errors?.required\">\n                  Enter your Location.\n                </div>\n                <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.location.errors?.minLength || myForm.location.errors?.maxLength\">\n                    Location length should be 3 to 25.\n                </div> -->\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label for=\"preferredLocationVerify3\">Preferred Location</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"preferredLocation\">\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.preferredLocation.errors?.required\">\n                  Enter your Preferred Location.\n                </div>\n              </div>\n    \n              \n            </div>\n    \n            <div class=\"row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"adharNumber3\">Aadhar Number</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"adharNumber\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.adharNumber.errors?.required\">\n                  Enter your Aadhar Number.\n                </div>\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.adharNumber.errors?.pattern\">\n                  Enter Numbers Only\n                </div>\n                <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.adharNumber.errors?.minLength || myForm.adharNumber.errors?.maxLength\">\n                    Adhar Number length should be 12.\n                </div> -->\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label for=\"panNumber3\">PAN Number</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"panNumber\">\n                <!-- error -->\n                <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.panNumber.errors?.required\">\n                  Enter your PAN Number.\n                </div>\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.panNumber.errors?.pattern\">\n                  Enter Numbers Only\n                </div> -->\n                <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.panNumber.errors?.minLength || myForm.panNumber.errors?.maxLength\">\n                    PAN Number length should be 10.\n                </div> -->\n              </div>\n            </div>\n    \n            <div class=\"row\">\n              <div class=\"col-md-6 form-group\">\n                <label for=\"skillNumber3\">Skill Set</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"skillSet\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.skillSet.errors?.required\">\n                  Enter Skills.\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n            <div class=\"col-md-6 form-group\">\n              <button class=\"btn btn-success btn-lg btn-block\" type=\"submit\">Update</button>\n            </div>\n            <div class=\"col-md-6 form-group\">\n              <button class=\"btn btn-danger btn-lg btn-block\" type=\"reset\">Cancel</button>\n            </div>\n          </div>\n          </form>\n        </div><!-- form  -->\n    </div>\n  </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row bg-secondary p-2\">\n    <div class=\"col-md-7\">\n      <img src=\"../../assets/img/logo-white.png\" alt=\"\" class=\"logo-img\" routerLink=\"/dashboard\" style=\"cursor: pointer;\">\n    </div>\n    <div class=\"col-md-5\">\n      <button class=\"btn btn-danger float-right\" (click)=\"logout()\">Sign Out</button>\n      <button routerLink=\"/add-candidate\" class=\"btn btn-success float-right mr-3\">Add Candidate</button>\n    </div>\n  </div>\n</div>\n<div class=\"row justify-content-center mt-2\">\n    <div class=\"col-md-8 register-employee\">\n      <!-- form card register -->\n      <div class=\"card card-outline-secondary\">\n        <div class=\"card-header\">\n          <h3 class=\"mb-0\">Edit Candidate</h3>\n          <button routerLink=\"/candidates\" class=\"mb-0 btn btn-success float-right\">Back</button>\n        </div>\n        <div class=\"card-body\">\n          <form [formGroup]=\"editForm\" (ngSubmit)=\"onSubmit()\">\n            <div class=\"row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"inputName\">Consultant Name</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"consultantName\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.consultantName.errors?.required\">\n                    Consultant Name is required.\n                </div>\n                <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.consultantName.errors?.minLength || myForm.consultantName.errors?.maxLength\">\n                    Consultant Name length should be 3 to 25.\n                </div> -->\n              </div>\n              \n              <div class=\"form-group col-md-6\">\n                <label for=\"yearOfExperienceNumber3\">Year Of Experience</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"yearOfExperience\">\n                  <!-- <div class=\"input-group\">\n                    <input class=\"form-control input-sm\" type=\"text\" formcontrolname=\"month\">&nbsp;Year&nbsp;\n                    <input class=\"form-control input-sm\" type=\"text\" formcontrolname=\"year\">&nbsp;Month&nbsp;\n                  </div> -->\n                <!-- error -->\n                <p>* Enter Year in Format 8.5 (8Years5Months)</p>\n            <div class=\"text-danger\" *ngIf=\"submitted && myForm.yearOfExperience.errors?.required\">\n              Enter Year Of Experience.\n            </div>\n            <div class=\"text-danger\" *ngIf=\"showErrorMessage == true\">\n              Month should be less then 12\n            </div>\n              </div>\n    \n              \n            </div>\n      \n              <!-- <div class=\"form-group col-md-6\">\n                <label for=\"inputPassword3\">Designation</label>\n                <select class=\"custom-select form-control\" (change)=\"updateProfile($event.target.value)\"\n                  formControlName=\"designation\">\n                  <option value=\"\">Choose...</option>\n                  <option *ngFor=\"let employeeProfile of EmployeeProfile\" value=\"{{employeeProfile}}\">{{employeeProfile}}\n                  </option>\n                </select>\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.designation.errors?.required\">\n                  Choose designation.\n                </div>\n              </div>  -->\n            <div class=\"row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"inputVerify3\">Mobile No</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"phoneNumber\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.phoneNumber.errors?.required\">\n                  Enter your phone number.\n                </div>\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.phoneNumber.errors?.pattern\">\n                  Enter Numbers Only\n                </div>\n                <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.phoneNumber.errors?.minLength || myForm.phoneNumber.errors?.maxLength\">\n                    Phone Number length should be 10.\n                </div> -->\n              </div>\n    \n              <div class=\"form-group col-md-6\">\n                <label for=\"inputEmail3\">Email</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"email\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.email.errors?.required\">\n                  Enter your email.\n                </div>\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.email.errors?.pattern\">\n                  Enter valid email.\n                </div>\n              </div>\n            </div>\n    \n            <div class=\"row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"locationVerify3\">Location</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"location\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.location.errors?.required\">\n                  Enter your Location.\n                </div>\n                <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.location.errors?.minLength || myForm.location.errors?.maxLength\">\n                    Location length should be 3 to 25.\n                </div> -->\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label for=\"preferredLocationVerify3\">Preferred Location</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"preferredLocation\">\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.preferredLocation.errors?.required\">\n                  Enter your Preferred Location.\n                </div>\n              </div>\n    \n              \n            </div>\n    \n            <div class=\"row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"adharNumber3\">Aadhar Number</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"adharNumber\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.adharNumber.errors?.required\">\n                  Enter your Aadhar Number.\n                </div>\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.adharNumber.errors?.pattern\">\n                  Enter Numbers Only\n                </div>\n                <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.adharNumber.errors?.minLength || myForm.adharNumber.errors?.maxLength\">\n                    Adhar Number length should be 12.\n                </div> -->\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label for=\"panNumber3\">PAN Number</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"panNumber\">\n                <!-- error -->\n                <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.panNumber.errors?.required\">\n                  Enter your PAN Number.\n                </div>\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.panNumber.errors?.pattern\">\n                  Enter Numbers Only\n                </div> -->\n                <!-- <div class=\"text-danger\" *ngIf=\"submitted && myForm.panNumber.errors?.minLength || myForm.panNumber.errors?.maxLength\">\n                    PAN Number length should be 10.\n                </div> -->\n              </div>\n            </div>\n    \n            <div class=\"row\">\n              <div class=\"col-md-6 form-group\">\n                <label for=\"skillNumber3\">Skill Set</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"skillSet\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.skillSet.errors?.required\">\n                  Enter Skills.\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n            <div class=\"col-md-6 form-group\">\n              <button class=\"btn btn-success btn-lg btn-block\" type=\"submit\">Update</button>\n            </div>\n            <div class=\"col-md-6 form-group\">\n              <button class=\"btn btn-danger btn-lg btn-block\" type=\"reset\">Cancel</button>\n            </div>\n          </div>\n          </form>\n        </div><!-- form  -->\n    </div>\n  </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/institutes/add-institue/add-institue.component.html":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/institutes/add-institue/add-institue.component.html ***!
+  \***********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <div class=\"row bg-secondary p-2\">\n        <div class=\"col-md-7\">\n            <img src=\"../../assets/img/logo-white.png\" alt=\"\" class=\"logo-img\" routerLink=\"/dashboard\" style=\"cursor: pointer;\">\n        </div>\n    <div class=\"col-md-5\">\n        <button class=\"btn btn-danger float-right\" (click)=\"logout()\">Sign Out</button>\n    </div>\n    </div>\n</div>\n<div class=\"row justify-content-center\">\n    <button class=\"btn btn-danger mt-2\" routerLink=\"/institutes\">Back</button>\n    <div class=\"col-md-8 register-employee\">\n        <!-- form card register -->\n        <div class=\"card-body\">\n            <form [formGroup]=\"instituteForm\" (ngSubmit)=\"onSubmit()\" enctype=\"multipart/form-data\">\n            <div class=\"row\">\n            <div class=\"form-group col-md-6\">\n                <label for=\"instituteName\">Institute Name</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"instituteName\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.instituteName.errors?.required\">\n                    Institute Name is required.\n                </div>\n            </div>\n            <div class=\"form-group col-md-6\">\n                <label for=\"universityOfTheInstitute\">University of the Institute</label>\n                <input class=\"form-control\" type=\"text\" formControlName=\"universityOfTheInstitute\">\n                <!-- error -->\n                <div class=\"text-danger\" *ngIf=\"submitted && myForm.universityOfTheInstitute.errors?.required\">\n                    University of the Institute Name is required.\n                </div>\n            </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"form-group col-md-6\">\n                    <label for=\"instituteTpoName\">Name of TPO</label>\n                    <input class=\"form-control\" type=\"text\" formControlName=\"instituteTpoName\">\n                    <!-- error -->\n                    <div class=\"text-danger\" *ngIf=\"submitted && myForm.instituteTpoName.errors?.required\">\n                        Name of TPO is required.\n                    </div>\n                </div>\n                <div class=\"form-group col-md-6\">\n                    <label for=\"instituteTpoPhoneNumber\">Phone number of TPO</label>\n                    <input class=\"form-control\" type=\"text\" formControlName=\"instituteTpoPhoneNumber\">\n                    <!-- error -->\n                    <div class=\"text-danger\" *ngIf=\"submitted && myForm.instituteTpoPhoneNumber.errors?.required\">\n                        Phone number of TPO is required.\n                    </div>\n                    <div class=\"text-danger\" *ngIf=\"submitted && myForm.instituteTpoPhoneNumber.errors?.pattern\">\n                        Enter Numbers Only\n                    </div>\n                </div>\n            </div>\n            <div class=\"row\">\n                    <div class=\"form-group col-md-6\">\n                        <label for=\"instituteTpoEmail\">Email ID of TPO</label>\n                        <input class=\"form-control\" type=\"text\" formControlName=\"instituteTpoEmail\">\n                        <!-- error -->\n                        <div class=\"text-danger\" *ngIf=\"submitted && myForm.instituteTpoEmail.errors?.required\">\n                            Email ID of TPO is required.\n                        </div>\n                        <div class=\"text-danger\" *ngIf=\"submitted && myForm.instituteTpoEmail.errors?.pattern\">\n                            Enter valid email.\n                        </div>\n                    </div>\n            </div>\n            <div formGroupName=\"address\">\n                <label for=\"address\">Institute Address</label>\n                <div class=\"row\">\n                    <div class=\"col-md-4 form-group\">\n                        <input type=\"text\" class=\"form-control \" formControlName=\"line1\" placeholder=\"Address Line 1\" \n                        [ngClass]=\"{ 'is-invalid': formSubmitted && ff.line1.errors }\">\n                        <div *ngIf=\"formSubmitted && ff.line1.errors\">\n                            <div *ngIf=\"ff.line1.errors.required\">Address Line 1 is required</div>\n                        </div>\n                    </div>\n                    <div class=\"col-md-4 form-group\">\n                        <input type=\"text\" class=\"form-control \" formControlName=\"line2\" placeholder=\"Address Line 2\" \n                        [ngClass]=\"{ 'is-invalid': formSubmitted && ff.line2.errors }\">\n                        <div *ngIf=\"formSubmitted && ff.line2.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"ff.line2.errors.required\">Address Line 2 is required</div>\n                        </div>\n                    </div>\n                    <div class=\"col-md-4 form-group\">\n                        <input type=\"text\" class=\"form-control\" formControlName=\"city\" placeholder=\"City\" \n                        [ngClass]=\"{ 'is-invalid': formSubmitted && ff.city.errors }\">\n                        <div *ngIf=\"formSubmitted && ff.city.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"ff.city.errors.required\">City name is required</div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col-md-6 form-group\">\n                        <input type=\"text\" class=\"form-control\" formControlName=\"pinCode\" placeholder=\"Zip Code\" \n                        [ngClass]=\"{ 'is-invalid': formSubmitted && ff.pinCode.errors }\">\n                        <div *ngIf=\"formSubmitted && ff.pinCode.errors\" class=\"invalid-feedback\">\n                            <div *ngIf=\"ff.pinCode.errors.required\">Zip Code is required</div>\n                        </div>\n                    </div>\n                    <div class=\"col-md-6 form-group\">\n                        <input type=\"text\" class=\"form-control\" formControlName=\"state\" placeholder=\"State\" \n                        [ngClass]=\"{ 'is-invalid': formSubmitted && ff.state.errors }\">\n                    <div *ngIf=\"formSubmitted && ff.state.errors\" class=\"invalid-feedback\">\n                        <div *ngIf=\"ff.state.errors.required\">State name is required</div>\n                    </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row\">\n            <div class=\"form-group col-md-6\">\n                <button class=\"btn btn-success btn-lg btn-block\" type=\"submit\">Add Institute</button>\n            </div>\n            <div class=\"col-md-6 form-group\">\n                <button class=\"btn btn-danger btn-lg btn-block\" type=\"reset\">Cancel</button>\n            </div>\n            </div>\n            </form>\n        </div>\n    </div><!-- form card register -->\n    </div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/institutes/edit-institue/edit-institue.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/institutes/edit-institue/edit-institue.component.html ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>edit-institue works!</p>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/institutes/institue-list/institue-list.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/institutes/institue-list/institue-list.component.html ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <div class=\"row bg-secondary\" style=\"padding-top : 10px; padding-bottom : 10px; \">\n        <div class=\"col-md-7\">\n            <img src=\"../../assets/img/logo-white.png\" alt=\"\" class=\"logo-img\" routerLink=\"/dashboard\" style=\"cursor: pointer;\">\n        </div>\n        <div class=\"col-md-5\">\n            <button class=\"btn btn-danger float-right\" (click)=\"logout()\">Sign Out</button>\n            <button routerLink=\"/add-institute\" class=\"btn btn-success float-right mr-3\">Add Institutes</button>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid\">\n    <div #institutesList>\n        <div style=\"padding-bottom: 10px;padding-top: 10px;\">\n        <div class=\"row\">\n            <div class=\"col-sm-6\">\n                <button routerLink=\"/dashboard\" class=\"btn btn-danger mr-1\">Back</button>\n                <button (click)=\"exportToExcel()\" class=\"btn btn-success\">Export To Excel</button>\n        </div>\n        <div class=\"col-sm-6\">\n            <input class=\"float-right\" type=\"text\" [(ngModel)]=\"term\" placeholder=\"Search\">\n        </div>\n        </div>\n        </div>\n        <table class=\"table\">\n            <thead>\n            <tr>\n                <th>Institute Name</th>\n                <th>University Of The Institute</th>\n                <th>Institute TPO Name</th>\n                <th>Institute Phone Number</th>\n                <th>Institute TPO Email</th>\n                <th>Status</th>\n            </tr>\n            </thead>\n            <tbody>\n            <tr *ngFor=\"let institute of institutes | filter:term | paginate : { itemsPerPage:5, currentPage:p}\">\n                <td>{{institute.instituteName}}</td>\n                <td>{{institute.universityOfTheInstitute}}</td>\n                <td>{{institute.instituteTpoName}}</td>\n                <td>{{institute.instituteTpoPhoneNumber}}</td>\n                <td>{{institute.instituteTpoEmail}}</td>\n                <td>\n                    <label class=\"switch\">\n                        <input type=\"checkbox\" [checked]=\"institute.instituteStatus\" (change)=\"changeInstituteStatus(institute.instituteName,institute.instituteStatus)\">\n                        <span class=\"slider round\"></span>\n                    </label>\n                </td>\n                <!-- <td class=\"text-center edit-block\">\n                    <span class=\"edit\" [routerLink]=\"['/edit-institute/', institute._id]\">\n                    <button type=\"button\" class=\"btn btn-success btn-sm\">Edit</button>\n                    </span>\n                    <span class=\"delete\" (click)=\"removeEmployee(employee, i)\">\n                        <button type=\"button\" class=\"btn btn-danger btn-sm\">Delete</button>\n                    </span>\n                </td> -->\n            </tr>\n            </tbody>\n            <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n        </table>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -385,6 +437,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_candidate_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/candidate.service */ "./src/app/services/candidate.service.ts");
 /* harmony import */ var _services_notification_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/notification.service */ "./src/app/services/notification.service.ts");
 /* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var _services_institute_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../services/institute.service */ "./src/app/services/institute.service.ts");
+
 
 
 
@@ -393,18 +447,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AddCandidateComponent = class AddCandidateComponent {
-    constructor(fb, router, ngZone, notificationService, candidateService, userService) {
+    constructor(fb, router, ngZone, notificationService, candidateService, userService, instituteService) {
         this.fb = fb;
         this.router = router;
         this.ngZone = ngZone;
         this.notificationService = notificationService;
         this.candidateService = candidateService;
         this.userService = userService;
+        this.instituteService = instituteService;
         this.submitted = false;
         this.showErrorMessage = false;
+        this.institutes = [];
         this.mainForm();
     }
     ngOnInit() {
+        this.getInstitutes();
+    }
+    getInstitutes() {
+        this.instituteService.getInstitutes().subscribe((data) => {
+            this.institutes = data.institute;
+            let other = { instituteName: "Other" };
+            this.institutes.push(other);
+        }, (err) => {
+            console.log(err);
+        });
     }
     mainForm() {
         const data = this.userService.currentUser();
@@ -421,6 +487,8 @@ let AddCandidateComponent = class AddCandidateComponent {
             skillSet: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             yearOfExperience: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             createdBy: [this.currentUserEmail, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            candidateSource: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            canidateCollege: [''],
             resume: ['']
         });
     }
@@ -484,7 +552,7 @@ let AddCandidateComponent = class AddCandidateComponent {
                     this.ngZone.run(() => this.router.navigateByUrl('/candidates'));
                 }, (error) => {
                     console.log(error);
-                    this.notificationService.showError(error, '');
+                    this.notificationService.showError(error, 'Validation Failed');
                 });
             }
         }
@@ -496,7 +564,8 @@ AddCandidateComponent.ctorParameters = () => [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"] },
     { type: _services_notification_service__WEBPACK_IMPORTED_MODULE_5__["NotificationService"] },
     { type: _services_candidate_service__WEBPACK_IMPORTED_MODULE_4__["CandidateService"] },
-    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"] }
+    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"] },
+    { type: _services_institute_service__WEBPACK_IMPORTED_MODULE_7__["InstituteService"] }
 ];
 AddCandidateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -526,10 +595,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _add_candidate_add_candidate_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./add-candidate/add-candidate.component */ "./src/app/add-candidate/add-candidate.component.ts");
 /* harmony import */ var _edit_candidate_edit_candidate_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit-candidate/edit-candidate.component */ "./src/app/edit-candidate/edit-candidate.component.ts");
 /* harmony import */ var _candidate_list_candidate_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./candidate-list/candidate-list.component */ "./src/app/candidate-list/candidate-list.component.ts");
-/* harmony import */ var _signup_signup_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./signup/signup.component */ "./src/app/signup/signup.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
-/* harmony import */ var _guards_signup_guard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./guards/signup.guard */ "./src/app/guards/signup.guard.ts");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _institutes_institue_list_institue_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./institutes/institue-list/institue-list.component */ "./src/app/institutes/institue-list/institue-list.component.ts");
+/* harmony import */ var _institutes_add_institue_add_institue_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./institutes/add-institue/add-institue.component */ "./src/app/institutes/add-institue/add-institue.component.ts");
+/* harmony import */ var _institutes_edit_institue_edit_institue_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./institutes/edit-institue/edit-institue.component */ "./src/app/institutes/edit-institue/edit-institue.component.ts");
+/* harmony import */ var _signup_signup_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./signup/signup.component */ "./src/app/signup/signup.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
+/* harmony import */ var _guards_signup_guard__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./guards/signup.guard */ "./src/app/guards/signup.guard.ts");
+
+
+
+
 
 
 
@@ -548,31 +625,51 @@ const routes = [
     },
     { path: 'add-candidate',
         component: _add_candidate_add_candidate_component__WEBPACK_IMPORTED_MODULE_3__["AddCandidateComponent"],
-        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]]
+        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"]]
     },
     {
         path: 'edit-candidate/:id',
         component: _edit_candidate_edit_candidate_component__WEBPACK_IMPORTED_MODULE_4__["EditCandidateComponent"],
-        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]]
+        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"]]
     },
     {
         path: 'candidates',
         component: _candidate_list_candidate_list_component__WEBPACK_IMPORTED_MODULE_5__["CandidateListComponent"],
-        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]]
+        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"]]
+    },
+    {
+        path: 'institutes',
+        component: _institutes_institue_list_institue_list_component__WEBPACK_IMPORTED_MODULE_7__["InstitueListComponent"],
+        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"]]
+    },
+    {
+        path: 'add-institute',
+        component: _institutes_add_institue_add_institue_component__WEBPACK_IMPORTED_MODULE_8__["AddInstitueComponent"],
+        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"]]
+    },
+    {
+        path: 'edit-institute/:id',
+        component: _institutes_edit_institue_edit_institue_component__WEBPACK_IMPORTED_MODULE_9__["EditInstitueComponent"],
+        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"]]
+    },
+    {
+        path: 'dashboard',
+        component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_6__["DashboardComponent"],
+        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"]]
     },
     {
         path: 'sign-up',
-        component: _signup_signup_component__WEBPACK_IMPORTED_MODULE_6__["SignupComponent"],
-        canActivate: [_guards_signup_guard__WEBPACK_IMPORTED_MODULE_9__["SignupGuard"]]
+        component: _signup_signup_component__WEBPACK_IMPORTED_MODULE_10__["SignupComponent"],
+        canActivate: [_guards_signup_guard__WEBPACK_IMPORTED_MODULE_13__["SignupGuard"]]
     },
     {
         path: 'login',
-        component: _login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"]
+        component: _login_login_component__WEBPACK_IMPORTED_MODULE_11__["LoginComponent"]
     },
     {
         path: '**',
         redirectTo: 'candidates',
-        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]]
+        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"]]
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -661,6 +758,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit_candidate_edit_candidate_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./edit-candidate/edit-candidate.component */ "./src/app/edit-candidate/edit-candidate.component.ts");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
 /* harmony import */ var _signup_signup_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./signup/signup.component */ "./src/app/signup/signup.component.ts");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _institutes_institue_list_institue_list_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./institutes/institue-list/institue-list.component */ "./src/app/institutes/institue-list/institue-list.component.ts");
+/* harmony import */ var _institutes_add_institue_add_institue_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./institutes/add-institue/add-institue.component */ "./src/app/institutes/add-institue/add-institue.component.ts");
+/* harmony import */ var _institutes_edit_institue_edit_institue_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./institutes/edit-institue/edit-institue.component */ "./src/app/institutes/edit-institue/edit-institue.component.ts");
+
+
+
+
 
 
 
@@ -690,7 +795,11 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _add_candidate_add_candidate_component__WEBPACK_IMPORTED_MODULE_15__["AddCandidateComponent"],
             _edit_candidate_edit_candidate_component__WEBPACK_IMPORTED_MODULE_16__["EditCandidateComponent"],
             _login_login_component__WEBPACK_IMPORTED_MODULE_17__["LoginComponent"],
-            _signup_signup_component__WEBPACK_IMPORTED_MODULE_18__["SignupComponent"]
+            _signup_signup_component__WEBPACK_IMPORTED_MODULE_18__["SignupComponent"],
+            _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_19__["DashboardComponent"],
+            _institutes_institue_list_institue_list_component__WEBPACK_IMPORTED_MODULE_20__["InstitueListComponent"],
+            _institutes_add_institue_add_institue_component__WEBPACK_IMPORTED_MODULE_21__["AddInstitueComponent"],
+            _institutes_edit_institue_edit_institue_component__WEBPACK_IMPORTED_MODULE_22__["EditInstitueComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -803,6 +912,60 @@ CandidateListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./candidate-list.component.scss */ "./src/app/candidate-list/candidate-list.component.scss")).default]
     })
 ], CandidateListComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/dashboard/dashboard.component.scss":
+/*!****************************************************!*\
+  !*** ./src/app/dashboard/dashboard.component.scss ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".logo-img {\n  padding-top: 0px;\n  height: 42px;\n  width: 150px;\n  margin-right: 15px;\n}\n\n.box {\n  width: 300px;\n  height: 300px;\n  border-radius: 5px;\n  padding: 5px;\n  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);\n  background: #fbfcee;\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  cursor: pointer;\n}\n\n.box:hover {\n  box-shadow: 0 10px 6px -6px #777;\n}\n\n.wave {\n  opacity: 0.4;\n  position: absolute;\n  top: 3%;\n  left: 50%;\n  background: #0af;\n  width: 500px;\n  height: 500px;\n  margin-left: -250px;\n  margin-top: -250px;\n  transform-origin: 50% 48%;\n  border-radius: 43%;\n  -webkit-animation: drift 3000ms infinite linear;\n          animation: drift 3000ms infinite linear;\n}\n\n.wave.-three {\n  -webkit-animation: drift 5000ms infinite linear;\n          animation: drift 5000ms infinite linear;\n}\n\n.wave.-two {\n  -webkit-animation: drift 7000ms infinite linear;\n          animation: drift 7000ms infinite linear;\n  opacity: 0.1;\n  background: yellow;\n}\n\n.box:after {\n  content: \"\";\n  display: block;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background: linear-gradient(to bottom, #ee88aa, rgba(221, 238, 255, 0) 80%, rgba(255, 255, 255, 0.5));\n  z-index: 11;\n  transform: translate3d(0, 0, 0);\n}\n\n.title {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  z-index: 1;\n  line-height: 300px;\n  text-align: center;\n  transform: translate3d(0, 0, 0);\n  color: white;\n  text-transform: uppercase;\n  font-family: \"Playfair Display\", serif;\n  letter-spacing: 0.4em;\n  font-size: 24px;\n  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);\n  text-indent: 0.3em;\n}\n\n@-webkit-keyframes drift {\n  from {\n    transform: rotate(0deg);\n  }\n  from {\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes drift {\n  from {\n    transform: rotate(0deg);\n  }\n  from {\n    transform: rotate(360deg);\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL0M6XFxVc2Vyc1xca3VuYWxcXERlc2t0b3BcXEVtaWNvblxccmVjcnVpdG1lbnQtbWFuYWdlclxcY2xpZW50L3NyY1xcYXBwXFxkYXNoYm9hcmRcXGRhc2hib2FyZC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZGFzaGJvYXJkL2Rhc2hib2FyZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGdCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtBQ0NKOztBRENBO0VBQ0UsWUFBQTtFQUNBLGFBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSx5Q0FBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLCtCQUFBO0VBQ0EsZUFBQTtBQ0VGOztBRENBO0VBR1MsZ0NBQUE7QUNFVDs7QURDQTtFQUNFLFlBQUE7RUFDQSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxTQUFBO0VBQ0EsZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkFBQTtFQUNBLGtCQUFBO0VBQ0EsK0NBQUE7VUFBQSx1Q0FBQTtBQ0VGOztBRENBO0VBQ0UsK0NBQUE7VUFBQSx1Q0FBQTtBQ0VGOztBRENBO0VBQ0UsK0NBQUE7VUFBQSx1Q0FBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtBQ0VGOztBRENBO0VBQ0UsV0FBQTtFQUNBLGNBQUE7RUFDQSxPQUFBO0VBQ0EsTUFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EscUdBQUE7RUFDQSxXQUFBO0VBQ0EsK0JBQUE7QUNFRjs7QURDQTtFQUNFLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLE1BQUE7RUFDQSxXQUFBO0VBQ0EsVUFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSwrQkFBQTtFQUNBLFlBQUE7RUFDQSx5QkFBQTtFQUNBLHNDQUFBO0VBQ0EscUJBQUE7RUFDQSxlQUFBO0VBQ0EsdUNBQUE7RUFDQSxrQkFBQTtBQ0VGOztBREFBO0VBQ0U7SUFBTyx1QkFBQTtFQ0lQO0VESEE7SUFBTyx5QkFBQTtFQ01QO0FBQ0Y7O0FEVEE7RUFDRTtJQUFPLHVCQUFBO0VDSVA7RURIQTtJQUFPLHlCQUFBO0VDTVA7QUFDRiIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9kYXNoYm9hcmQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9nby1pbWd7XHJcbiAgICBwYWRkaW5nLXRvcDogMHB4O1xyXG4gICAgaGVpZ2h0OiA0MnB4O1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxNXB4O1xyXG59XHJcbi5ib3gge1xyXG4gIHdpZHRoOiAzMDBweDtcclxuICBoZWlnaHQ6IDMwMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICBwYWRkaW5nOjVweDtcclxuICBib3gtc2hhZG93OiAwIDJweCAzMHB4IHJnYmEoYmxhY2ssIC4yKTtcclxuICBiYWNrZ3JvdW5kOiBsaWdodGVuKCNmMGY0YzMsIDEwJSk7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgwLCAwLCAwKTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi5ib3g6aG92ZXJ7XHJcblx0LXdlYmtpdC1ib3gtc2hhZG93OiAwIDEwcHggNnB4IC02cHggIzc3NztcclxuXHQgICAtbW96LWJveC1zaGFkb3c6IDAgMTBweCA2cHggLTZweCAjNzc3O1xyXG5cdCAgICAgICAgYm94LXNoYWRvdzogMCAxMHB4IDZweCAtNnB4ICM3Nzc7XHJcbn1cclxuXHJcbi53YXZlIHtcclxuICBvcGFjaXR5OiAuNDtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiAzJTtcclxuICBsZWZ0OiA1MCU7XHJcbiAgYmFja2dyb3VuZDogIzBhZjtcclxuICB3aWR0aDogNTAwcHg7XHJcbiAgaGVpZ2h0OiA1MDBweDtcclxuICBtYXJnaW4tbGVmdDogLTI1MHB4O1xyXG4gIG1hcmdpbi10b3A6IC0yNTBweDtcclxuICB0cmFuc2Zvcm0tb3JpZ2luOiA1MCUgNDglO1xyXG4gIGJvcmRlci1yYWRpdXM6IDQzJTtcclxuICBhbmltYXRpb246IGRyaWZ0IDMwMDBtcyBpbmZpbml0ZSBsaW5lYXI7XHJcbn1cclxuXHJcbi53YXZlLi10aHJlZSB7XHJcbiAgYW5pbWF0aW9uOiBkcmlmdCA1MDAwbXMgaW5maW5pdGUgbGluZWFyO1xyXG59XHJcblxyXG4ud2F2ZS4tdHdvIHtcclxuICBhbmltYXRpb246IGRyaWZ0IDcwMDBtcyBpbmZpbml0ZSBsaW5lYXI7XHJcbiAgb3BhY2l0eTogLjE7XHJcbiAgYmFja2dyb3VuZDogeWVsbG93O1xyXG59XHJcblxyXG4uYm94OmFmdGVyIHtcclxuICBjb250ZW50OiAnJztcclxuICBkaXNwbGF5OiBibG9jaztcclxuICBsZWZ0OiAwO1xyXG4gIHRvcDogMDtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KHRvIGJvdHRvbSwgcmdiYSgjZThhLCAxKSwgcmdiYSgjZGVmLCAwKSA4MCUsIHJnYmEod2hpdGUsIC41KSk7XHJcbiAgei1pbmRleDogMTE7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgwLCAwLCAwKTtcclxufVxyXG5cclxuLnRpdGxlIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgbGVmdDogMDtcclxuICB0b3A6IDA7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgei1pbmRleDogMTtcclxuICBsaW5lLWhlaWdodDogMzAwcHg7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMCwgMCwgMCk7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcbiAgZm9udC1mYW1pbHk6ICdQbGF5ZmFpciBEaXNwbGF5Jywgc2VyaWY7XHJcbiAgbGV0dGVyLXNwYWNpbmc6IC40ZW07XHJcbiAgZm9udC1zaXplOiAyNHB4O1xyXG4gIHRleHQtc2hhZG93OiAwIDFweCAwIHJnYmEoYmxhY2ssIC4xKTtcclxuICB0ZXh0LWluZGVudDogLjNlbTtcclxufVxyXG5Aa2V5ZnJhbWVzIGRyaWZ0IHtcclxuICBmcm9tIHsgdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7IH1cclxuICBmcm9tIHsgdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTsgfVxyXG59IiwiLmxvZ28taW1nIHtcbiAgcGFkZGluZy10b3A6IDBweDtcbiAgaGVpZ2h0OiA0MnB4O1xuICB3aWR0aDogMTUwcHg7XG4gIG1hcmdpbi1yaWdodDogMTVweDtcbn1cblxuLmJveCB7XG4gIHdpZHRoOiAzMDBweDtcbiAgaGVpZ2h0OiAzMDBweDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBwYWRkaW5nOiA1cHg7XG4gIGJveC1zaGFkb3c6IDAgMnB4IDMwcHggcmdiYSgwLCAwLCAwLCAwLjIpO1xuICBiYWNrZ3JvdW5kOiAjZmJmY2VlO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMCwgMCwgMCk7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmJveDpob3ZlciB7XG4gIC13ZWJraXQtYm94LXNoYWRvdzogMCAxMHB4IDZweCAtNnB4ICM3Nzc7XG4gIC1tb3otYm94LXNoYWRvdzogMCAxMHB4IDZweCAtNnB4ICM3Nzc7XG4gIGJveC1zaGFkb3c6IDAgMTBweCA2cHggLTZweCAjNzc3O1xufVxuXG4ud2F2ZSB7XG4gIG9wYWNpdHk6IDAuNDtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDMlO1xuICBsZWZ0OiA1MCU7XG4gIGJhY2tncm91bmQ6ICMwYWY7XG4gIHdpZHRoOiA1MDBweDtcbiAgaGVpZ2h0OiA1MDBweDtcbiAgbWFyZ2luLWxlZnQ6IC0yNTBweDtcbiAgbWFyZ2luLXRvcDogLTI1MHB4O1xuICB0cmFuc2Zvcm0tb3JpZ2luOiA1MCUgNDglO1xuICBib3JkZXItcmFkaXVzOiA0MyU7XG4gIGFuaW1hdGlvbjogZHJpZnQgMzAwMG1zIGluZmluaXRlIGxpbmVhcjtcbn1cblxuLndhdmUuLXRocmVlIHtcbiAgYW5pbWF0aW9uOiBkcmlmdCA1MDAwbXMgaW5maW5pdGUgbGluZWFyO1xufVxuXG4ud2F2ZS4tdHdvIHtcbiAgYW5pbWF0aW9uOiBkcmlmdCA3MDAwbXMgaW5maW5pdGUgbGluZWFyO1xuICBvcGFjaXR5OiAwLjE7XG4gIGJhY2tncm91bmQ6IHllbGxvdztcbn1cblxuLmJveDphZnRlciB7XG4gIGNvbnRlbnQ6IFwiXCI7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCh0byBib3R0b20sICNlZTg4YWEsIHJnYmEoMjIxLCAyMzgsIDI1NSwgMCkgODAlLCByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSkpO1xuICB6LWluZGV4OiAxMTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgwLCAwLCAwKTtcbn1cblxuLnRpdGxlIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDAlO1xuICB6LWluZGV4OiAxO1xuICBsaW5lLWhlaWdodDogMzAwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgwLCAwLCAwKTtcbiAgY29sb3I6IHdoaXRlO1xuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICBmb250LWZhbWlseTogXCJQbGF5ZmFpciBEaXNwbGF5XCIsIHNlcmlmO1xuICBsZXR0ZXItc3BhY2luZzogMC40ZW07XG4gIGZvbnQtc2l6ZTogMjRweDtcbiAgdGV4dC1zaGFkb3c6IDAgMXB4IDAgcmdiYSgwLCAwLCAwLCAwLjEpO1xuICB0ZXh0LWluZGVudDogMC4zZW07XG59XG5cbkBrZXlmcmFtZXMgZHJpZnQge1xuICBmcm9tIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTtcbiAgfVxuICBmcm9tIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpO1xuICB9XG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/dashboard/dashboard.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/dashboard/dashboard.component.ts ***!
+  \**************************************************/
+/*! exports provided: DashboardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return DashboardComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/user.service */ "./src/app/services/user.service.ts");
+
+
+
+let DashboardComponent = class DashboardComponent {
+    constructor(userService) {
+        this.userService = userService;
+    }
+    ngOnInit() {
+    }
+    logout() {
+        this.userService.logout();
+    }
+};
+DashboardComponent.ctorParameters = () => [
+    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"] }
+];
+DashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-dashboard',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./dashboard.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dashboard/dashboard.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./dashboard.component.scss */ "./src/app/dashboard/dashboard.component.scss")).default]
+    })
+], DashboardComponent);
 
 
 
@@ -1066,6 +1229,268 @@ SignupGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/institutes/add-institue/add-institue.component.scss":
+/*!*********************************************************************!*\
+  !*** ./src/app/institutes/add-institue/add-institue.component.scss ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".logo-img {\n  padding-top: 0px;\n  height: 42px;\n  width: 150px;\n  margin-right: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaW5zdGl0dXRlcy9hZGQtaW5zdGl0dWUvQzpcXFVzZXJzXFxrdW5hbFxcRGVza3RvcFxcRW1pY29uXFxyZWNydWl0bWVudC1tYW5hZ2VyXFxjbGllbnQvc3JjXFxhcHBcXGluc3RpdHV0ZXNcXGFkZC1pbnN0aXR1ZVxcYWRkLWluc3RpdHVlLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9pbnN0aXR1dGVzL2FkZC1pbnN0aXR1ZS9hZGQtaW5zdGl0dWUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2luc3RpdHV0ZXMvYWRkLWluc3RpdHVlL2FkZC1pbnN0aXR1ZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sb2dvLWltZ3tcclxuICAgIHBhZGRpbmctdG9wOiAwcHg7XHJcbiAgICBoZWlnaHQ6IDQycHg7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDE1cHg7XHJcbn0iLCIubG9nby1pbWcge1xuICBwYWRkaW5nLXRvcDogMHB4O1xuICBoZWlnaHQ6IDQycHg7XG4gIHdpZHRoOiAxNTBweDtcbiAgbWFyZ2luLXJpZ2h0OiAxNXB4O1xufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/institutes/add-institue/add-institue.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/institutes/add-institue/add-institue.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: AddInstitueComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddInstitueComponent", function() { return AddInstitueComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_notification_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/notification.service */ "./src/app/services/notification.service.ts");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var _services_institute_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/institute.service */ "./src/app/services/institute.service.ts");
+
+
+
+
+
+
+
+let AddInstitueComponent = class AddInstitueComponent {
+    constructor(fb, router, ngZone, notificationService, userService, instituteService) {
+        this.fb = fb;
+        this.router = router;
+        this.ngZone = ngZone;
+        this.notificationService = notificationService;
+        this.userService = userService;
+        this.instituteService = instituteService;
+        this.submitted = false;
+        this.showErrorMessage = false;
+        this.mainForm();
+    }
+    ngOnInit() {
+    }
+    mainForm() {
+        const data = this.userService.currentUser();
+        this.currentUserEmail = data.email;
+        this.instituteForm = this.fb.group({
+            instituteName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            universityOfTheInstitute: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            address: this.fb.group({
+                line1: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+                line2: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+                city: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+                pinCode: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+                state: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+            }),
+            instituteTpoName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            instituteTpoPhoneNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('^[0-9]+$')]],
+            instituteTpoEmail: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+            instituteStatus: [true, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            instituteAddedBy: [this.currentUserEmail, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
+        });
+    }
+    get ff() {
+        let outerGroup = this.instituteForm.controls.address;
+        return (outerGroup.controls);
+    }
+    get myForm() {
+        return this.instituteForm.controls;
+    }
+    logout() {
+        this.userService.logout();
+    }
+    onSubmit() {
+        this.submitted = true;
+        if (!this.instituteForm.valid) {
+            return false;
+        }
+        else {
+            console.log(this.instituteForm.value);
+            this.instituteService.addInstitute(this.instituteForm.value).subscribe((res) => {
+                this.notificationService.showSuccess('Institute successfully Added!', "");
+                this.ngZone.run(() => this.router.navigateByUrl('/institutes'));
+            }, (error) => {
+                console.log(error);
+                this.notificationService.showError(error, '');
+            });
+        }
+    }
+};
+AddInstitueComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"] },
+    { type: _services_notification_service__WEBPACK_IMPORTED_MODULE_4__["NotificationService"] },
+    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"] },
+    { type: _services_institute_service__WEBPACK_IMPORTED_MODULE_6__["InstituteService"] }
+];
+AddInstitueComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-add-institue',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./add-institue.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/institutes/add-institue/add-institue.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./add-institue.component.scss */ "./src/app/institutes/add-institue/add-institue.component.scss")).default]
+    })
+], AddInstitueComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/institutes/edit-institue/edit-institue.component.scss":
+/*!***********************************************************************!*\
+  !*** ./src/app/institutes/edit-institue/edit-institue.component.scss ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2luc3RpdHV0ZXMvZWRpdC1pbnN0aXR1ZS9lZGl0LWluc3RpdHVlLmNvbXBvbmVudC5zY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/institutes/edit-institue/edit-institue.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/institutes/edit-institue/edit-institue.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: EditInstitueComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditInstitueComponent", function() { return EditInstitueComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let EditInstitueComponent = class EditInstitueComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+EditInstitueComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-edit-institue',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./edit-institue.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/institutes/edit-institue/edit-institue.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./edit-institue.component.scss */ "./src/app/institutes/edit-institue/edit-institue.component.scss")).default]
+    })
+], EditInstitueComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/institutes/institue-list/institue-list.component.scss":
+/*!***********************************************************************!*\
+  !*** ./src/app/institutes/institue-list/institue-list.component.scss ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".logo-img {\n  padding-top: 0px;\n  height: 42px;\n  width: 150px;\n  margin-right: 15px;\n}\n\n.switch {\n  position: relative;\n  display: inline-block;\n  width: 60px;\n  height: 34px;\n  float: right;\n}\n\n.switch input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.switch .slider {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  transition: 0.4s;\n}\n\n.slider:before {\n  position: absolute;\n  content: \"\";\n  height: 26px;\n  width: 26px;\n  left: 4px;\n  bottom: 4px;\n  background-color: white;\n  transition: 0.4s;\n}\n\ninput:checked + .slider {\n  background-color: #2196F3;\n}\n\ninput:focus + .slider {\n  box-shadow: 0 0 1px #2196F3;\n}\n\ninput:checked + .slider:before {\n  transform: translateX(26px);\n}\n\n/* Rounded sliders */\n\n.slider.round {\n  border-radius: 34px;\n}\n\n.slider.round:before {\n  border-radius: 50%;\n}\n\n.strip {\n  padding: 20px;\n  font-weight: 700;\n  background-color: lightgray;\n  border-radius: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaW5zdGl0dXRlcy9pbnN0aXR1ZS1saXN0L0M6XFxVc2Vyc1xca3VuYWxcXERlc2t0b3BcXEVtaWNvblxccmVjcnVpdG1lbnQtbWFuYWdlclxcY2xpZW50L3NyY1xcYXBwXFxpbnN0aXR1dGVzXFxpbnN0aXR1ZS1saXN0XFxpbnN0aXR1ZS1saXN0LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9pbnN0aXR1dGVzL2luc3RpdHVlLWxpc3QvaW5zdGl0dWUtbGlzdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGdCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtBQ0NKOztBRENBO0VBQ0ksa0JBQUE7RUFDQSxxQkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtBQ0VKOztBRERJO0VBQ0UsVUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0FDR047O0FEREk7RUFDRSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxNQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0Esc0JBQUE7RUFFQSxnQkFBQTtBQ0dOOztBRElFO0VBQ0Usa0JBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxTQUFBO0VBQ0EsV0FBQTtFQUNBLHVCQUFBO0VBRUEsZ0JBQUE7QUNESjs7QURJRTtFQUNBLHlCQUFBO0FDREY7O0FESUU7RUFDRSwyQkFBQTtBQ0RKOztBRElFO0VBR0EsMkJBQUE7QUNERjs7QURJRSxvQkFBQTs7QUFDQTtFQUNBLG1CQUFBO0FDREY7O0FESUU7RUFDQSxrQkFBQTtBQ0RGOztBRElFO0VBQ0UsYUFBQTtFQUNBLGdCQUFBO0VBQ0EsMkJBQUE7RUFDQSxtQkFBQTtBQ0RKIiwiZmlsZSI6InNyYy9hcHAvaW5zdGl0dXRlcy9pbnN0aXR1ZS1saXN0L2luc3RpdHVlLWxpc3QuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9nby1pbWd7XHJcbiAgICBwYWRkaW5nLXRvcDogMHB4O1xyXG4gICAgaGVpZ2h0OiA0MnB4O1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxNXB4O1xyXG59XHJcbi5zd2l0Y2gge1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgd2lkdGg6IDYwcHg7XHJcbiAgICBoZWlnaHQ6IDM0cHg7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICBpbnB1dCB7IFxyXG4gICAgICBvcGFjaXR5OiAwO1xyXG4gICAgICB3aWR0aDogMDtcclxuICAgICAgaGVpZ2h0OiAwO1xyXG4gICAgfVxyXG4gICAgLnNsaWRlciB7XHJcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICB0b3A6IDA7XHJcbiAgICAgIGxlZnQ6IDA7XHJcbiAgICAgIHJpZ2h0OiAwO1xyXG4gICAgICBib3R0b206IDA7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICNjY2M7XHJcbiAgICAgIC13ZWJraXQtdHJhbnNpdGlvbjogLjRzO1xyXG4gICAgICB0cmFuc2l0aW9uOiAuNHM7XHJcbiAgICB9XHJcbiAgfVxyXG4gIFxyXG4gIFxyXG4gIFxyXG5cclxuICAuc2xpZGVyOmJlZm9yZSB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBjb250ZW50OiBcIlwiO1xyXG4gICAgaGVpZ2h0OiAyNnB4O1xyXG4gICAgd2lkdGg6IDI2cHg7XHJcbiAgICBsZWZ0OiA0cHg7XHJcbiAgICBib3R0b206IDRweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgLXdlYmtpdC10cmFuc2l0aW9uOiAuNHM7XHJcbiAgICB0cmFuc2l0aW9uOiAuNHM7XHJcbiAgfVxyXG4gIFxyXG4gIGlucHV0OmNoZWNrZWQgKyAuc2xpZGVyIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjE5NkYzO1xyXG4gIH1cclxuICBcclxuICBpbnB1dDpmb2N1cyArIC5zbGlkZXIge1xyXG4gICAgYm94LXNoYWRvdzogMCAwIDFweCAjMjE5NkYzO1xyXG4gIH1cclxuICBcclxuICBpbnB1dDpjaGVja2VkICsgLnNsaWRlcjpiZWZvcmUge1xyXG4gIC13ZWJraXQtdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDI2cHgpO1xyXG4gIC1tcy10cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMjZweCk7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDI2cHgpO1xyXG4gIH1cclxuICBcclxuICAvKiBSb3VuZGVkIHNsaWRlcnMgKi9cclxuICAuc2xpZGVyLnJvdW5kIHtcclxuICBib3JkZXItcmFkaXVzOiAzNHB4O1xyXG4gIH1cclxuICBcclxuICAuc2xpZGVyLnJvdW5kOmJlZm9yZSB7XHJcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gIH1cclxuXHJcbiAgLnN0cmlwe1xyXG4gICAgcGFkZGluZzogMjBweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA3MDA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBsaWdodGdyYXk7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gIH0iLCIubG9nby1pbWcge1xuICBwYWRkaW5nLXRvcDogMHB4O1xuICBoZWlnaHQ6IDQycHg7XG4gIHdpZHRoOiAxNTBweDtcbiAgbWFyZ2luLXJpZ2h0OiAxNXB4O1xufVxuXG4uc3dpdGNoIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHdpZHRoOiA2MHB4O1xuICBoZWlnaHQ6IDM0cHg7XG4gIGZsb2F0OiByaWdodDtcbn1cbi5zd2l0Y2ggaW5wdXQge1xuICBvcGFjaXR5OiAwO1xuICB3aWR0aDogMDtcbiAgaGVpZ2h0OiAwO1xufVxuLnN3aXRjaCAuc2xpZGVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2NjYztcbiAgLXdlYmtpdC10cmFuc2l0aW9uOiAwLjRzO1xuICB0cmFuc2l0aW9uOiAwLjRzO1xufVxuXG4uc2xpZGVyOmJlZm9yZSB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgY29udGVudDogXCJcIjtcbiAgaGVpZ2h0OiAyNnB4O1xuICB3aWR0aDogMjZweDtcbiAgbGVmdDogNHB4O1xuICBib3R0b206IDRweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG4gIC13ZWJraXQtdHJhbnNpdGlvbjogMC40cztcbiAgdHJhbnNpdGlvbjogMC40cztcbn1cblxuaW5wdXQ6Y2hlY2tlZCArIC5zbGlkZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjE5NkYzO1xufVxuXG5pbnB1dDpmb2N1cyArIC5zbGlkZXIge1xuICBib3gtc2hhZG93OiAwIDAgMXB4ICMyMTk2RjM7XG59XG5cbmlucHV0OmNoZWNrZWQgKyAuc2xpZGVyOmJlZm9yZSB7XG4gIC13ZWJraXQtdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDI2cHgpO1xuICAtbXMtdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDI2cHgpO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMjZweCk7XG59XG5cbi8qIFJvdW5kZWQgc2xpZGVycyAqL1xuLnNsaWRlci5yb3VuZCB7XG4gIGJvcmRlci1yYWRpdXM6IDM0cHg7XG59XG5cbi5zbGlkZXIucm91bmQ6YmVmb3JlIHtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xufVxuXG4uc3RyaXAge1xuICBwYWRkaW5nOiAyMHB4O1xuICBmb250LXdlaWdodDogNzAwO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBsaWdodGdyYXk7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/institutes/institue-list/institue-list.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/institutes/institue-list/institue-list.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: InstitueListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InstitueListComponent", function() { return InstitueListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! xlsx */ "./node_modules/xlsx/xlsx.js");
+/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(xlsx__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _services_institute_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/institute.service */ "./src/app/services/institute.service.ts");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var _services_notification_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/notification.service */ "./src/app/services/notification.service.ts");
+
+
+
+
+
+
+let InstitueListComponent = class InstitueListComponent {
+    constructor(instituteService, userService, notifyService) {
+        this.instituteService = instituteService;
+        this.userService = userService;
+        this.notifyService = notifyService;
+        this.institutes = [];
+        this.getinstitute();
+    }
+    ngOnInit() {
+    }
+    getinstitute() {
+        this.instituteService.getInstitutes().subscribe((data) => {
+            this.institutes = data.institute;
+        });
+    }
+    exportToExcel() {
+        const ws = xlsx__WEBPACK_IMPORTED_MODULE_2__["utils"].table_to_sheet(this.institutesList.nativeElement);
+        const wb = xlsx__WEBPACK_IMPORTED_MODULE_2__["utils"].book_new();
+        xlsx__WEBPACK_IMPORTED_MODULE_2__["utils"].book_append_sheet(wb, ws, 'Sheet1');
+        xlsx__WEBPACK_IMPORTED_MODULE_2__["writeFile"](wb, 'institutes.xlsx');
+    }
+    logout() {
+        this.userService.logout();
+    }
+    changeInstituteStatus(name, status) {
+        let newStatus;
+        if (status == "true" || status == true) {
+            newStatus = false;
+        }
+        else {
+            newStatus = true;
+        }
+        console.log(status);
+        console.log(newStatus);
+        this.instituteService.changeInstituteStatus(name, newStatus).subscribe((data) => {
+            console.log(data);
+            this.notifyService.showSuccess("Status Changed", "");
+            this.ngOnInit();
+        }, (err) => {
+            console.log(err);
+            this.notifyService.showError("Something went wrong", "");
+        });
+    }
+};
+InstitueListComponent.ctorParameters = () => [
+    { type: _services_institute_service__WEBPACK_IMPORTED_MODULE_3__["InstituteService"] },
+    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"] },
+    { type: _services_notification_service__WEBPACK_IMPORTED_MODULE_5__["NotificationService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('institutesList', { static: false })
+], InstitueListComponent.prototype, "institutesList", void 0);
+InstitueListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-institue-list',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./institue-list.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/institutes/institue-list/institue-list.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./institue-list.component.scss */ "./src/app/institutes/institue-list/institue-list.component.scss")).default]
+    })
+], InstitueListComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/interceptors/httpconfig.interceptor.ts":
 /*!********************************************************!*\
   !*** ./src/app/interceptors/httpconfig.interceptor.ts ***!
@@ -1177,7 +1602,7 @@ let LoginComponent = class LoginComponent {
         this.userService.userLogin(this.loginForm.value).subscribe((data) => {
             this.notifyService.showSuccess('Login Successfully', "");
             localStorage.setItem('Token', data.token);
-            this.router.navigate([`/candidates`]);
+            this.router.navigate([`/dashboard`]);
         }, (err) => {
             if (err.error.error) {
                 this.notifyService.showError(err.error.error, "");
@@ -1267,6 +1692,53 @@ CandidateService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], CandidateService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/institute.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/services/institute.service.ts ***!
+  \***********************************************/
+/*! exports provided: InstituteService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InstituteService", function() { return InstituteService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+let InstituteService = class InstituteService {
+    constructor(http) {
+        this.http = http;
+    }
+    addInstitute(data) {
+        console.log(data);
+        return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiBaseUrl}/institute/add-institute`, data);
+    }
+    getInstitutes() {
+        return this.http.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiBaseUrl}/institute/get-institute`);
+    }
+    changeInstituteStatus(name, status) {
+        const data = { name, status };
+        return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiBaseUrl}/institute/change-institute-status`, data);
+    }
+};
+InstituteService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+InstituteService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], InstituteService);
 
 
 

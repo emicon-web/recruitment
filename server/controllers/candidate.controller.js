@@ -115,19 +115,16 @@ module.exports.addCandidate =  async (req,res,next) => {
     //     if (err) {
     //         return res.status(422).send("an Error occured")
     //     }
-            
         const candidate = await Candidate.findOne({ $or : [
             {'email':req.body.email},
             {'phoneNumber':req.body.phoneNumber},
             // {'panNumber':req.body.panNumber},
             {'adharNumber':req.body.adharNumber}
         ]});
-        console.log(req.body);
         if(candidate) return res.status(400).json({ type: "Invalid", msg: "Candidate Data is Already in Database"});
+        
+        newCandidate = new Candidate(_.pick(req.body,['consultantName','email','location','preferredLocation','phoneNumber','panNumber','adharNumber','skillSet','yearOfExperience','consultantImage','resume','candidateSource','canidateCollege']));
 
-        newCandidate = new Candidate(_.pick(req.body,['consultantName','email','location','preferredLocation','phoneNumber','panNumber','adharNumber','skillSet','yearOfExperience','consultantImage','resume']));
-
-        console.log(newCandidate);
         // newCandidate.consultantImage = '../../../../uploads/' + req.files[0].filename;
         // newCandidate.resume = '../../../../uploads/' + req.files[1].filename;
         await newCandidate.save((err, doc) => {
@@ -172,7 +169,6 @@ module.exports.addCandidate =  async (req,res,next) => {
 module.exports.getSpecificCandidates =  async (req,res,next) => {
     const can = await Candidate.findOne({'_id':req.params.id});
     if(!can) return res.status(400).json({ type: "Invalid", msg: "Something Went Wrong"});
-    console.log(can.candidateHistory.length);
     if(can.candidateHistory.length == 0){
         res.status(200).json({ success : true, can });
     }else{
@@ -186,7 +182,6 @@ module.exports.updateCandidate =  async (req,res,next) => {
     // res.status(200).json({ success : true, candidate });
     const candidate = await Candidate.findOne({_id : req.params.id});
     candidate.candidateHistory.push(req.body);
-    console.log(candidate);
     await candidate.save((err, doc) => {
         if(!err) {
             res.status(200).json({ success : true, msg: "Candidate Updated" });

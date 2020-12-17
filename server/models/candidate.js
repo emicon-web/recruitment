@@ -56,6 +56,13 @@ const candidateSchema = new mongooose.Schema({
         type : String,
         // required : true
     },
+    candidateSource : {
+        type : String,
+        required : true
+    },
+    canidateCollege:{
+        type: String
+    },
     candidateHistory : []
 },
 {
