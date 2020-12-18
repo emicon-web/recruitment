@@ -1,6 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 import { NotificationService } from '../../services/notification.service';
 import { UserService } from '../../services/user.service';
@@ -38,7 +39,7 @@ export class AddInstitueComponent implements OnInit {
             line1 : ['',Validators.required],
             line2 : ['',Validators.required],
             city : ['',Validators.required],
-            pinCode : ['', Validators.required],
+            pinCode : ['', [Validators.required,Validators.pattern('^[0-9]+$')]],
             state: ['',Validators.required]
           }),
           instituteTpoName: ['',[Validators.required]],
@@ -70,10 +71,16 @@ export class AddInstitueComponent implements OnInit {
             (res) => {
               this.notificationService.showSuccess('Institute successfully Added!',"");
               this.ngZone.run(() => this.router.navigateByUrl('/institutes'))
-            }, (error) => {
-              console.log(error); 
-              this.notificationService.showError(error,'');
-            });
+            }, (err: HttpErrorResponse) => {
+              if (err.error.error) {
+                this.notificationService.showError(err.error.error,"");
+              }
+              else if(err.error.msg){
+                this.notificationService.showError(err.error.msg,"");
+              } else {
+                this.notificationService.showError("Something went wrong","");
+              }
+            })
         }
       }
 }

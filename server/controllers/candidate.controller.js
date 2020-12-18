@@ -119,10 +119,17 @@ module.exports.addCandidate =  async (req,res,next) => {
             {'email':req.body.email},
             {'phoneNumber':req.body.phoneNumber},
             // {'panNumber':req.body.panNumber},
-            {'adharNumber':req.body.adharNumber}
+            // {'adharNumber':req.body.adharNumber}
         ]});
-        if(candidate) return res.status(400).json({ type: "Invalid", msg: "Candidate Data is Already in Database"});
+        if(candidate) return res.status(400).json({ type: "Invalid", msg: "Candidate Email or Phone Number is Already in Database"});
         
+        if(req.body.adharNumber != null){
+            const candidate = await Candidate.findOne({ $or : [
+            {'adharNumber':req.body.adharNumber}
+            ]});
+            if(candidate) return res.status(400).json({ type: "Invalid", msg: "Candidate Adhar Number is Already in Database"});
+        }
+
         newCandidate = new Candidate(_.pick(req.body,['consultantName','email','location','preferredLocation','phoneNumber','panNumber','adharNumber','skillSet','yearOfExperience','consultantImage','resume','candidateSource','canidateCollege']));
 
         // newCandidate.consultantImage = '../../../../uploads/' + req.files[0].filename;

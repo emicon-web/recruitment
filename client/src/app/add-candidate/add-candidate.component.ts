@@ -1,6 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 import { CandidateService } from '../services/candidate.service';
 import { NotificationService } from '../services/notification.service';
@@ -107,7 +108,9 @@ onFileSelectt(event) {
     if (!this.candidateForm.valid) {
       return false;
     } else {
-      console.log(this.candidateForm.value);
+      if(this.candidateForm.value.adharNumber == ""){
+        this.candidateForm.value.adharNumber = null;
+      }
       this.candidateService.addCandidate(this.candidateForm.value
       // this.candidateForm.get('consultantImage').value,
       // this.candidateForm.value.consultantName,
@@ -125,10 +128,16 @@ onFileSelectt(event) {
         (res) => {
           this.notificationService.showSuccess('Candidate successfully created!',"");
           this.ngZone.run(() => this.router.navigateByUrl('/candidates'))
-        }, (error) => {
-          console.log(error);
-          this.notificationService.showError(error,'Validation Failed');
-        });
+        },(err: HttpErrorResponse) => {
+          if (err.error.error) {
+            this.notificationService.showError(err.error.error,"");
+          }
+          else if(err.error.msg){
+            this.notificationService.showError(err.error.msg,"");
+          } else {
+            this.notificationService.showError("Something went wrong","");
+          }
+        })
     }
   }
   }

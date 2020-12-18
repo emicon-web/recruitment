@@ -43,7 +43,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="instituteTpoPhoneNumber">Phone number of TPO</label>
-                    <input class="form-control" type="text" formControlName="instituteTpoPhoneNumber">
+                    <input class="form-control" type="text" maxlength="10" formControlName="instituteTpoPhoneNumber">
                     <!-- error -->
                     <div class="text-danger" *ngIf="submitted && myForm.instituteTpoPhoneNumber.errors?.required">
                         Phone number of TPO is required.
@@ -71,22 +71,22 @@
                 <div class="row">
                     <div class="col-md-4 form-group">
                         <input type="text" class="form-control " formControlName="line1" placeholder="Address Line 1" 
-                        [ngClass]="{ 'is-invalid': formSubmitted && ff.line1.errors }">
-                        <div *ngIf="formSubmitted && ff.line1.errors">
+                        [ngClass]="{ 'is-invalid': submitted && ff.line1.errors }">
+                        <div class="text-danger" *ngIf="submitted && ff.line1.errors">
                             <div *ngIf="ff.line1.errors.required">Address Line 1 is required</div>
                         </div>
                     </div>
                     <div class="col-md-4 form-group">
                         <input type="text" class="form-control " formControlName="line2" placeholder="Address Line 2" 
-                        [ngClass]="{ 'is-invalid': formSubmitted && ff.line2.errors }">
-                        <div *ngIf="formSubmitted && ff.line2.errors" class="invalid-feedback">
+                        [ngClass]="{ 'is-invalid': submitted && ff.line2.errors }">
+                        <div *ngIf="submitted && ff.line2.errors" class="text-danger">
                             <div *ngIf="ff.line2.errors.required">Address Line 2 is required</div>
                         </div>
                     </div>
                     <div class="col-md-4 form-group">
                         <input type="text" class="form-control" formControlName="city" placeholder="City" 
-                        [ngClass]="{ 'is-invalid': formSubmitted && ff.city.errors }">
-                        <div *ngIf="formSubmitted && ff.city.errors" class="invalid-feedback">
+                        [ngClass]="{ 'is-invalid': submitted && ff.city.errors }">
+                        <div *ngIf="submitted && ff.city.errors" class="text-danger">
                             <div *ngIf="ff.city.errors.required">City name is required</div>
                         </div>
                     </div>
@@ -94,15 +94,16 @@
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <input type="text" class="form-control" formControlName="pinCode" placeholder="Zip Code" 
-                        [ngClass]="{ 'is-invalid': formSubmitted && ff.pinCode.errors }">
-                        <div *ngIf="formSubmitted && ff.pinCode.errors" class="invalid-feedback">
+                        [ngClass]="{ 'is-invalid': submitted && ff.pinCode.errors }">
+                        <div *ngIf="submitted && ff.pinCode.errors" class="text-danger">
                             <div *ngIf="ff.pinCode.errors.required">Zip Code is required</div>
+                            <div *ngIf="ff.pinCode.errors.pattern">Enter Number Only</div>
                         </div>
                     </div>
                     <div class="col-md-6 form-group">
                         <input type="text" class="form-control" formControlName="state" placeholder="State" 
-                        [ngClass]="{ 'is-invalid': formSubmitted && ff.state.errors }">
-                    <div *ngIf="formSubmitted && ff.state.errors" class="invalid-feedback">
+                        [ngClass]="{ 'is-invalid': submitted && ff.state.errors }">
+                    <div *ngIf="submitted && ff.state.errors" class="text-danger">
                         <div *ngIf="ff.state.errors.required">State name is required</div>
                     </div>
                     </div>
